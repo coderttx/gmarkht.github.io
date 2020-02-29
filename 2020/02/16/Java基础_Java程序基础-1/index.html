@@ -16,7 +16,7 @@
 <meta property="og:description" content="1.基本数据类型 基本数据类型是CPU可以直接进行运算的类型。Java定义了以下几种基本数据类型：整数类型：byte，short，int，long浮点数类型：float，double字符类型：char布尔类型：boolean">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-16T13:05:49.195Z">
-<meta property="article:modified_time" content="2020-02-18T02:51:46.290Z">
+<meta property="article:modified_time" content="2020-02-25T00:52:19.567Z">
 <meta property="article:author" content="Java猿的技术博">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -175,12 +175,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="1-基本数据类型"><a href="#1-基本数据类型" class="headerlink" title="1.基本数据类型"></a>1.基本数据类型</h1><ol>
-<li><p>基本数据类型是CPU可以直接进行运算的类型。Java定义了以下几种基本数据类型：<br>整数类型：byte，short，int，long<br>浮点数类型：float，double<br>字符类型：char<br>布尔类型：boolean</p>
-<a id="more"></a></li>
-<li><p>不同的数据类型占用的字节数不一样。我们看一下Java基本数据类型占用的字节数：<br>a表示一个字节</p>
-<p>byte │ a │</p>
-</li>
+<li>基本数据类型是CPU可以直接进行运算的类型。Java定义了以下几种基本数据类型：<br>整数类型：byte，short，int，long<br>浮点数类型：float，double<br>字符类型：char<br>布尔类型：boolean<a id="more"></a></li>
+<li>不同的数据类型占用的字节数不一样。我们看一下Java基本数据类型占用的字节数：<br>a表示一个字节</li>
 </ol>
+<p>  byte │ a │</p>
 <p> short │ a │ a │</p>
 <p>   int │ a │ a │ a │ a │</p>
 <p>  long │ a │ a │ a │ a │ a │ a │ a │ a │</p>
@@ -191,22 +189,22 @@
 <hr>
 <p>整型</p>
 <p>对于整型类型，Java只定义了带符号的整型，因此，最高位的bit表示符号位（0表示正数，1表示负数）。各种整型能表示的最大范围如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">byte：-128 ~ 127</span><br><span class="line">short: -32768 ~ 32767</span><br><span class="line">int: -2147483648 ~ 2147483647</span><br><span class="line">long: -9223372036854775808 ~ 9223372036854775807</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span>：-<span class="number">128</span> ~ <span class="number">127</span></span><br><span class="line"><span class="keyword">short</span>: -<span class="number">32768</span> ~ <span class="number">32767</span></span><br><span class="line"><span class="keyword">int</span>: -<span class="number">2147483648</span> ~ <span class="number">2147483647</span></span><br><span class="line"><span class="keyword">long</span>: -<span class="number">9223372036854775808</span> ~ <span class="number">9223372036854775807</span></span><br></pre></td></tr></table></figure>
 <!--  more  -->
 <p>浮点型</p>
 <p>浮点类型的数就是小数，因为小数用科学计数法表示的时候，小数点是可以“浮动”的，如1234.5可以表示成12.345x102，也可以表示成1.2345x103，所以称为浮点数。<br>下面是定义浮点数的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">float f1 &#x3D; 3.14f;</span><br><span class="line">float f2 &#x3D; 3.14e38f; &#x2F;&#x2F; 科学计数法表示的3.14x10^38</span><br><span class="line">double d &#x3D; 1.79e308;</span><br><span class="line">double d2 &#x3D; -1.79e308;</span><br><span class="line">double d3 &#x3D; 4.9e-324; &#x2F;&#x2F; 科学计数法表示的4.9x10^-324</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> f1 = <span class="number">3.14f</span>;</span><br><span class="line"><span class="keyword">float</span> f2 = <span class="number">3.14e38f</span>; <span class="comment">// 科学计数法表示的3.14x10^38</span></span><br><span class="line"><span class="keyword">double</span> d = <span class="number">1.79e308</span>;</span><br><span class="line"><span class="keyword">double</span> d2 = -<span class="number">1.79e308</span>;</span><br><span class="line"><span class="keyword">double</span> d3 = <span class="number">4.9e-324</span>; <span class="comment">// 科学计数法表示的4.9x10^-324</span></span><br></pre></td></tr></table></figure>
 <p>对于float类型，需要加上f后缀。<br>浮点数可表示的范围非常大，float类型可最大表示3.4x1038，而double类型可最大表示1.79x10308。</p>
 <p>布尔类型</p>
 <p>布尔类型boolean只有true和false两个值，布尔类型总是关系运算的计算结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">boolean b1 &#x3D; true;</span><br><span class="line">boolean b2 &#x3D; false;</span><br><span class="line">boolean isGreater &#x3D; 5 &gt; 3; &#x2F;&#x2F; 计算结果为true</span><br><span class="line">int age &#x3D; 12;</span><br><span class="line">boolean isAdult &#x3D; age &gt;&#x3D; 18; &#x2F;&#x2F; 计算结果为false</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> b1 = <span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">boolean</span> b2 = <span class="keyword">false</span>;</span><br><span class="line"><span class="keyword">boolean</span> isGreater = <span class="number">5</span> &gt; <span class="number">3</span>; <span class="comment">// 计算结果为true</span></span><br><span class="line"><span class="keyword">int</span> age = <span class="number">12</span>;</span><br><span class="line"><span class="keyword">boolean</span> isAdult = age &gt;= <span class="number">18</span>; <span class="comment">// 计算结果为false</span></span><br></pre></td></tr></table></figure>
 <p>Java语言对布尔类型的存储并没有做规定，因为理论上存储布尔类型只需要1 bit，但是通常JVM内部会把boolean表示为4字节整数。</p>
 <p>字符类型</p>
 <p>字符类型char表示一个字符。Java的char类型除了可表示标准的ASCII外，还可以表示一个Unicode字符：</p>
 <p>注意char类型使用单引号’，且仅有一个字符，要和双引号”的字符串类型区分开。</p>
 <p>常量</p>
 <p>定义变量的时候，如果加上final修饰符，这个变量就变成了常量：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">final double PI &#x3D; 3.14; &#x2F;&#x2F; PI是一个常量</span><br><span class="line">double r &#x3D; 5.0;</span><br><span class="line">double area &#x3D; PI * r * r;</span><br><span class="line">PI &#x3D; 300; &#x2F;&#x2F; compile error!</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="keyword">double</span> PI = <span class="number">3.14</span>; <span class="comment">// PI是一个常量</span></span><br><span class="line"><span class="keyword">double</span> r = <span class="number">5.0</span>;</span><br><span class="line"><span class="keyword">double</span> area = PI * r * r;</span><br><span class="line">PI = <span class="number">300</span>; <span class="comment">// compile error!</span></span><br></pre></td></tr></table></figure>
 <p>常量在定义时进行初始化后就不可再次赋值，再次赋值会导致编译错误。<br>常量的作用是用有意义的变量名来避免魔术数字（Magic number），例如，不要在代码中到处写3.14，而是定义一个常量。如果将来需要提高计算精度，我们只需要在常量的定义处修改，例如，改成3.1416，而不必在所有地方替换3.14。<br>根据习惯，常量名通常全部大写。</p>
 <p>var关键字（java 10 开始使用）<br>有些时候，类型的名字太长，写起来比较麻烦。例如：<br>StringBuilder sb = new StringBuilder();</p>
 <p>这个时候，如果想省略变量类型，可以使用var关键字：<br>var sb = new StringBuilder();</p>
