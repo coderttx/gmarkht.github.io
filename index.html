@@ -173,16 +173,16 @@
       
         <h1 id="Java内存"><a href="#Java内存" class="headerlink" title="Java内存"></a>Java内存</h1><p>Java的内存需要划分成5个部分：</p>
 <p>1、栈（Stack）：存放的都是方法中的局部变量。方法的运行一定要在栈中运行。</p>
-<p>​    局部变量：方法的参数，或者是方法{}内部的变量</p>
-<p>​    作用域：一旦超出作用域，立刻从栈内存中消失。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;局部变量：方法的参数，或者是方法{}内部的变量</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作用域：一旦超出作用域，立刻从栈内存中消失。</p>
 <p>2、堆（Heap）：凡是new出来的东西，都在堆当中。</p>
 <p>​    堆内存里面的东西都有一个地址值：16进制</p>
 <p>​    堆内存里面的数据，都有默认值。规则：</p>
-<p>​            如果是整数            默认值为0</p>
-<p>​            如果是浮点数        默认值是0.0</p>
-<p>​            如果是字符            默认值是’\u0000’</p>
-<p>​            如果是布尔            默认值是false</p>
-<p>​            如果是引用类型     默认值是null</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果是整数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认值为0</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果是浮点数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认值是0.0</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果是字符&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认值是’\u0000’</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果是布尔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认值是false</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果是引用类型&nbsp;&nbsp;&nbsp;&nbsp;默认值是null</p>
 <p>3、方法区（Method Area）：存储.class相关信息，包含方法的信息。</p>
 <p>4、本地方法栈（Native Method Stack）：与操作系统相关。</p>
 <p>5、寄存器（pc Register）：与CPU相关。</p>
