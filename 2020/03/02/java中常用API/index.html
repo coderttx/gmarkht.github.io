@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java基础_Java程序基础-5.字符和字符串 | 一只猿的技术博</title>
+  <title>Java-API | 一只猿的技术博</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="字符类型字符类型char是基本数据类型，它是character的缩写。一个char保存一个Unicode字符： 12char c1 &#x3D; &#39;A&#39;;char c2 &#x3D; &#39;中&#39;;">
+  <meta name="description" content="一、什么是API概述：API，应用程序编程接口，java API是一本程序员的字典，是JDK中提供给我们使用的类的说明文档。这些类将底层的代码实现封装了起来，我们不需要关心这些类是如何实现的，只需要学习这些类如何使用即可，所以我们可以通过查询API的方式，来学习Java提供的类，并得知如何使用它们。 1、Scanner类获取键盘输入到程序当中。 　Scanner类的功能：可以实现键盘输入数据，到程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础_Java程序基础-5.字符和字符串">
-<meta property="og:url" content="http://yoursite.com/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-5/index.html">
+<meta property="og:title" content="Java-API">
+<meta property="og:url" content="http://yoursite.com/2020/03/02/java%E4%B8%AD%E5%B8%B8%E7%94%A8API/index.html">
 <meta property="og:site_name" content="一只猿的技术博">
-<meta property="og:description" content="字符类型字符类型char是基本数据类型，它是character的缩写。一个char保存一个Unicode字符： 12char c1 &#x3D; &#39;A&#39;;char c2 &#x3D; &#39;中&#39;;">
+<meta property="og:description" content="一、什么是API概述：API，应用程序编程接口，java API是一本程序员的字典，是JDK中提供给我们使用的类的说明文档。这些类将底层的代码实现封装了起来，我们不需要关心这些类是如何实现的，只需要学习这些类如何使用即可，所以我们可以通过查询API的方式，来学习Java提供的类，并得知如何使用它们。 1、Scanner类获取键盘输入到程序当中。 　Scanner类的功能：可以实现键盘输入数据，到程">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-17T03:13:49.096Z">
-<meta property="article:modified_time" content="2020-02-25T00:54:36.984Z">
+<meta property="article:published_time" content="2020-03-02T03:03:48.820Z">
+<meta property="article:modified_time" content="2020-03-02T08:17:53.342Z">
 <meta property="article:author" content="Java猿的技术博">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -151,20 +151,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java基础_Java程序基础-5" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-java中常用API" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java基础_Java程序基础-5.字符和字符串
+      Java-API
     </h1>
   
 
         
-        <a href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-5/" class="archive-article-date">
-  	<time datetime="2020-02-17T03:13:49.096Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
+        <a href="/2020/03/02/java%E4%B8%AD%E5%B8%B8%E7%94%A8API/" class="archive-article-date">
+  	<time datetime="2020-03-02T03:03:48.820Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
 </a>
         
       </header>
@@ -174,45 +174,44 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h2><p>字符类型char是基本数据类型，它是character的缩写。一个char保存一个Unicode字符：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c1 = <span class="string">'A'</span>;</span><br><span class="line"><span class="keyword">char</span> c2 = <span class="string">'中'</span>;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>因为Java在内存中总是使用Unicode表示字符，所以，一个英文字符和一个中文字符都用一个char类型表示，它们都占用两个字节。要显示一个字符的Unicode编码，只需将char类型直接赋值给int类型即可：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n1 = <span class="string">'A'</span>; <span class="comment">// 字母“A”的Unicodde编码是65</span></span><br><span class="line"><span class="keyword">int</span> n2 = <span class="string">'中'</span>; <span class="comment">// 汉字“中”的Unicode编码是20013</span></span><br></pre></td></tr></table></figure>
+        <h1 id="一、什么是API"><a href="#一、什么是API" class="headerlink" title="一、什么是API"></a>一、什么是API</h1><p>概述：API，应用程序编程接口，java API是一本程序员的字典，是JDK中提供给我们使用的类的说明文档。这些类将底层的代码实现封装了起来，我们不需要关心这些类是如何实现的，只需要学习这些类如何使用即可，所以我们可以通过查询API的方式，来学习Java提供的类，并得知如何使用它们。</p>
+<h2 id="1、Scanner类"><a href="#1、Scanner类" class="headerlink" title="1、Scanner类"></a>1、Scanner类</h2><p>获取键盘输入到程序当中。</p>
+<p>　Scanner类的功能：可以实现键盘输入数据，到程序中。</p>
+<p>　如何使用：</p>
+<ol>
+<li><p>导包</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> 包路径.类名称</span><br></pre></td></tr></table></figure>
 
-<p>还可以直接用转义字符\u+Unicode编码来表示一个字符：<br>// 注意是十六进制:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c3 = <span class="string">'\u0041'</span>; <span class="comment">// 'A'，因为十六进制0041 = 十进制65</span></span><br><span class="line"><span class="keyword">char</span> c4 = <span class="string">'\u4e2d'</span>; <span class="comment">// '中'，因为十六进制4e2d = 十进制20013</span></span><br></pre></td></tr></table></figure>
+<p>如果需要使用的目标类，和当前类位于同一个包下，则可以省略导包语句不写。</p>
+<p>只有java.lang包下的内容不需要导包，其他的包都需要import语句。</p>
+</li>
+<li><p>创建</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类名称 对象名 = <span class="keyword">new</span> 类名称()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对象名.成员方法名()</span><br></pre></td></tr></table></figure>
 
-<h2 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h2><p>和char类型不同，字符串类型String是引用类型，我们用双引号”…”表示字符串。一个字符串可以存储0个到任意个字符：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">""</span>; <span class="comment">// 空字符串，包含0个字符</span></span><br><span class="line">String s1 = <span class="string">"A"</span>; <span class="comment">// 包含一个字符</span></span><br><span class="line">String s2 = <span class="string">"ABC"</span>; <span class="comment">// 包含3个字符</span></span><br><span class="line">String s3 = <span class="string">"中文 ABC"</span>; <span class="comment">// 包含6个字符，其中有一个空格</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="2、Random类"><a href="#2、Random类" class="headerlink" title="2、Random类"></a>2、Random类</h2><p>Random类的功能：生成随机数的类</p>
+<p>​    </p>
+<p>如何使用：</p>
+<ol>
+<li><p>导包</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> 包路径.类名称</span><br></pre></td></tr></table></figure>
 
-<p>因为字符串使用双引号”…”表示开始和结束，那如果字符串本身恰好包含一个”字符怎么表示？例如，”abc”xyz”，编译器就无法判断中间的引号究竟是字符串的一部分还是表示字符串结束。这个时候，我们需要借助转义字符\：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">"abc\"xyz"</span>; <span class="comment">// 包含7个字符: a, b, c, ", x, y, z</span></span><br></pre></td></tr></table></figure>
+<p>如果需要使用的目标类，和当前类位于同一个包下，则可以省略导包语句不写。</p>
+<p>只有java.lang包下的内容不需要导包，其他的包都需要import语句。</p>
+</li>
+<li><p>创建</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类名称 对象名 = <span class="keyword">new</span> 类名称()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对象名.成员方法名()</span><br></pre></td></tr></table></figure>
 
-<p>因为\是转义字符，所以，两个\表示一个\字符：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">"abc\\xyz"</span>; <span class="comment">// 包含7个字符: a, b, c, \, x, y, z</span></span><br></pre></td></tr></table></figure>
-<p>常见的转义字符包括：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\<span class="string">" 表示字符"</span></span><br><span class="line">\<span class="string">' 表示字符'</span></span><br><span class="line">\\ 表示字符\</span><br><span class="line">\n 表示换行符</span><br><span class="line">\r 表示回车符</span><br><span class="line">\t 表示Tab</span><br><span class="line">\u#### 表示一个Unicode编码的字符</span><br></pre></td></tr></table></figure>
-<h2 id="字符串连接"><a href="#字符串连接" class="headerlink" title="字符串连接"></a>字符串连接</h2><p>Java的编译器对字符串做了特殊照顾，可以使用+连接任意字符串和其他数据类型，这样极大地方便了字符串的处理。例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String s1 = <span class="string">"Hello"</span>;</span><br><span class="line">        String s2 = <span class="string">"world"</span>;</span><br><span class="line">        String s = s1 + <span class="string">" "</span> + s2 + <span class="string">"!"</span>;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注：如果用+连接字符串和其他数据类型，会将其他数据类型先自动转型为字符串</p>
-<h2 id="多行字符串"><a href="#多行字符串" class="headerlink" title="多行字符串"></a>多行字符串</h2><p>如果我们要表示多行字符串，使用+号连接会非常不方便：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">"first line \n"</span></span><br><span class="line">         + <span class="string">"second line \n"</span></span><br><span class="line">         + <span class="string">"end"</span>;</span><br></pre></td></tr></table></figure>
-<p>从Java 13开始，字符串可以用”””…”””表示多行字符串（Text Blocks）了。举个例子：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">                   SELECT * FROM</span></span><br><span class="line"><span class="string">                     users</span></span><br><span class="line"><span class="string">                   WHERE id &gt; 100</span></span><br><span class="line"><span class="string">                   ORDER BY name DESC</span></span><br><span class="line"><span class="string">                   "</span><span class="string">""</span>;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上述多行字符串实际上是5行，在最后一个DESC后面还有一个\n。如果我们不想在字符串末尾加一个\n，就需要这么写：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">""</span><span class="string">" </span></span><br><span class="line"><span class="string">           SELECT * FROM</span></span><br><span class="line"><span class="string">             users</span></span><br><span class="line"><span class="string">           WHERE id &gt; 100</span></span><br><span class="line"><span class="string">           ORDER BY name DESC"</span><span class="string">""</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="不可变特性"><a href="#不可变特性" class="headerlink" title="不可变特性"></a>不可变特性</h2><p>Java的字符串除了是一个引用类型外，还有个重要特点，就是字符串不可变。考察以下代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"hello"</span>;</span><br><span class="line">        System.out.println(s); <span class="comment">// 显示 hello</span></span><br><span class="line">        s = <span class="string">"world"</span>;</span><br><span class="line">        System.out.println(s); <span class="comment">// 显示 world</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>观察执行结果，难道字符串s变了吗？其实变的不是字符串，而是变量s的“指向”。<br>执行String s = “hello”;时，JVM虚拟机先创建字符串”hello”，然后，把字符串变量s指向它：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">      s</span><br><span class="line">      │</span><br><span class="line">      ▼</span><br><span class="line">┌───┬───────────┬───┐</span><br><span class="line">│   │  <span class="string">"hello"</span>  │   │</span><br><span class="line">└───┴───────────┴───┘</span><br><span class="line"></span><br><span class="line">紧接着，执行s = <span class="string">"world"</span>;时，JVM虚拟机先创建字符串<span class="string">"world"</span>，然后，把字符串变量s指向它：</span><br><span class="line">      s ──────────────┐</span><br><span class="line">                      │</span><br><span class="line">                      ▼</span><br><span class="line">┌───┬───────────┬───┬───────────┬───┐</span><br><span class="line">│   │  <span class="string">"hello"</span>  │   │  <span class="string">"world"</span>  │   │</span><br><span class="line">└───┴───────────┴───┴───────────┴───┘</span><br></pre></td></tr></table></figure>
-<p>原来的字符串”hello”还在，只是我们无法通过变量s访问它而已。因此，字符串的不可变是指字符串内容不可变。<br>理解了引用类型的“指向”后，试解释下面的代码输出</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"hello"</span>;</span><br><span class="line">        String t = s;</span><br><span class="line">        s = <span class="string">"world"</span>;</span><br><span class="line">        System.out.println(t); <span class="comment">// t是"hello"还是"world"?</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出：<br>hello</p>
-<h2 id="空值null"><a href="#空值null" class="headerlink" title="空值null"></a>空值null</h2><p>引用类型的变量可以指向一个空值null，它表示不存在，即该变量不指向任何对象。例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s1 = <span class="keyword">null</span>; <span class="comment">// s1是null</span></span><br><span class="line">String s2; <span class="comment">// 没有赋初值值，s2也是null</span></span><br><span class="line">String s3 = s1; <span class="comment">// s3也是null</span></span><br><span class="line">String s4 = <span class="string">""</span>; <span class="comment">// s4指向空字符串，不是null</span></span><br></pre></td></tr></table></figure>
-<p>注意要区分空值null和空字符串””，空字符串是一个有效的字符串对象，它不等于null。</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Java的字符类型char是基本类型，字符串类型String是引用类型；<br>基本类型的变量是“持有”某个数值，引用类型的变量是“指向”某个对象；<br>引用类型的变量可以是空值null；<br>要区分空值null和空字符串””。</p>
+</li>
+</ol>
+<p>其他的类参考Java api 参考文档</p>
 
       
 
@@ -313,7 +312,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-5/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/02/java%E4%B8%AD%E5%B8%B8%E7%94%A8API/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -327,18 +326,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-6/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/03/02/Java_ArrayList%E9%9B%86%E5%90%88/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java基础_Java程序基础-6.数组类型
+          Java-ArrayList集合
         
       </div>
     </a>
   
   
-    <a href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-4/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java基础_Java程序基础-4.布尔运算</div>
+    <a href="/2020/02/29/java%E5%86%85%E5%AD%98%E5%88%92%E5%88%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java内存</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -365,7 +364,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#字符类型"><span class="toc-number">1.</span> <span class="toc-text">字符类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串类型"><span class="toc-number">2.</span> <span class="toc-text">字符串类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串连接"><span class="toc-number">3.</span> <span class="toc-text">字符串连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多行字符串"><span class="toc-number">4.</span> <span class="toc-text">多行字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不可变特性"><span class="toc-number">5.</span> <span class="toc-text">不可变特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#空值null"><span class="toc-number">6.</span> <span class="toc-text">空值null</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-number">7.</span> <span class="toc-text">小结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、什么是API"><span class="toc-number">1.</span> <span class="toc-text">一、什么是API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、Scanner类"><span class="toc-number">1.1.</span> <span class="toc-text">1、Scanner类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、Random类"><span class="toc-number">1.2.</span> <span class="toc-text">2、Random类</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
