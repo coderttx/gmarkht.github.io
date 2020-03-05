@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/03/05/Set%E9%9B%86%E5%90%88/</loc>
+    
+    <lastmod>2020-03-05T11:26:20.707Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/02/19/JavaWeb/</loc>
     
     <lastmod>2020-03-05T11:22:42.184Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>http://yoursite.com/2020/03/05/HashSet%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%AD%98%E5%82%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%E5%8E%9F%E5%9B%A0/</loc>
     
     <lastmod>2020-03-05T08:40:17.862Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/05/Set%E9%9B%86%E5%90%88/</loc>
-    
-    <lastmod>2020-03-05T08:40:06.063Z</lastmod>
     
   </url>
   
