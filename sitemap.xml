@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/02/19/JavaWeb/</loc>
+    
+    <lastmod>2020-03-05T11:22:42.184Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/02/29/java%E5%86%85%E5%AD%98%E5%88%92%E5%88%86/</loc>
+    
+    <lastmod>2020-03-05T11:22:20.690Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/02/ArrayList%E9%9B%86%E5%90%88/</loc>
+    
+    <lastmod>2020-03-05T11:22:05.946Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/05/LinkedList%E9%9B%86%E5%90%88/</loc>
+    
+    <lastmod>2020-03-05T11:21:33.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/05/Map%E9%9B%86%E5%90%88/</loc>
+    
+    <lastmod>2020-03-05T11:18:29.801Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/03/02/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E9%87%8F%E6%B1%A0/</loc>
     
     <lastmod>2020-03-05T11:16:40.853Z</lastmod>
@@ -12,13 +47,6 @@
     <loc>http://yoursite.com/2020/02/26/idea%E5%90%AF%E5%8A%A8tomcat%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2020-03-05T11:16:19.869Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/05/Map%E9%9B%86%E5%90%88/</loc>
-    
-    <lastmod>2020-03-05T11:12:12.305Z</lastmod>
     
   </url>
   
@@ -44,20 +72,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/05/LinkedList%E9%9B%86%E5%90%88/</loc>
-    
-    <lastmod>2020-03-05T08:14:24.670Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/02/ArrayList%E9%9B%86%E5%90%88/</loc>
-    
-    <lastmod>2020-03-05T07:39:09.408Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2020/03/04/List%E9%9B%86%E5%90%88/</loc>
     
     <lastmod>2020-03-04T15:45:49.046Z</lastmod>
@@ -65,23 +79,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/02/29/java%E5%86%85%E5%AD%98%E5%88%92%E5%88%86/</loc>
-    
-    <lastmod>2020-03-02T08:18:48.310Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2020/03/02/java%E4%B8%AD%E5%B8%B8%E7%94%A8API/</loc>
     
     <lastmod>2020-03-02T08:17:53.342Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/02/19/JavaWeb/</loc>
-    
-    <lastmod>2020-02-26T09:03:06.357Z</lastmod>
     
   </url>
   
