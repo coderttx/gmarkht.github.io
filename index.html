@@ -148,6 +148,412 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Map集合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/05/Map%E9%9B%86%E5%90%88/">Map集合</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/05/Map%E9%9B%86%E5%90%88/" class="archive-article-date">
+  	<time datetime="2020-03-05T09:27:22.285Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+</a>
+        
+      </header>
+    
+<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Map集合"><a href="#Map集合" class="headerlink" title="Map集合"></a>Map集合</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Map</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Map集合的特点：</p>
+<ol>
+<li>Map集合是一个双列集合，一个元素包含两个值（key，value）</li>
+<li>Map集合中的元素，key与value的数据类型可以相同，也可以不同</li>
+<li>Map集合中的元素，key是不可以重复的，value是可以重复的</li>
+<li>Map集合中的元素，key与value是一一对应</li>
+</ol>
+<h2 id="Map接口常用的实现类"><a href="#Map接口常用的实现类" class="headerlink" title="Map接口常用的实现类"></a>Map接口常用的实现类</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>基于哈希表的 <code>Map</code> 接口的实现。此实现提供所有可选的映射操作，并允许使用 <code>null</code> 值和 <code>null</code>  键。（除了非同步和允许使用 null 之外，<code>HashMap</code> 类与 <code>Hashtable</code>  大致相同。）此类不保证映射的顺序，特别是它不保证该顺序恒久不变。 </p>
+<h3 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h3><p><code>Map</code> 接口的哈希表和链接列表实现，具有可预知的迭代顺序。此实现与 <code>HashMap</code>  的不同之处在于，后者维护着一个运行于所有条目的双重链接列表。此链接列表定义了迭代顺序，该迭代顺序通常就是将键插入到映射中的顺序（<em>插入顺序<em>）。注意，如果在映射中</em>重新插入</em>  键，则插入顺序不受影响。</p>
+<h2 id="Map接口中常用的方法"><a href="#Map接口中常用的方法" class="headerlink" title="Map接口中常用的方法"></a>Map接口中常用的方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">V <span class="title">put</span><span class="params">(K key, V value)</span> </span></span><br><span class="line"><span class="function">          将指定的值与此映射中的指定键关联（可选操作）。 </span></span><br><span class="line"><span class="function">V <span class="title">remove</span><span class="params">(Object key)</span> </span></span><br><span class="line"><span class="function">          如果存在一个键的映射关系，则将其从此映射中移除（可选操作）。 </span></span><br><span class="line"><span class="function">V <span class="title">get</span><span class="params">(Object key)</span> </span></span><br><span class="line"><span class="function">          返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回 <span class="keyword">null</span>。  </span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">containsKey</span><span class="params">(Object key)</span> </span></span><br><span class="line"><span class="function">          如果此映射包含指定键的映射关系，则返回 <span class="keyword">true</span>。</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Map集合遍历键查找值的方法"><a href="#Map集合遍历键查找值的方法" class="headerlink" title="Map集合遍历键查找值的方法"></a>Map集合遍历键查找值的方法</h2><p>使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Set&lt;K&gt; <span class="title">keySet</span><span class="params">()</span> </span></span><br><span class="line"><span class="function">         返回此映射中包含的键的 Set 视图。</span></span><br></pre></td></tr></table></figure>
+
+<p>步骤：</p>
+<ol>
+<li>把Map集合中所有的key取出来存储到Set集合中</li>
+<li>使用迭代器或者是增强for遍历Set集合，获取到每一个key</li>
+<li>使用get(key)通过key获取value</li>
+</ol>
+<p>代码演示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Map集合;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Map&lt;String ,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">"张三"</span>,<span class="number">18</span>);</span><br><span class="line">        map.put(<span class="string">"李四"</span>,<span class="number">19</span>);</span><br><span class="line">        map.put(<span class="string">"王五"</span>,<span class="number">20</span>);</span><br><span class="line">        System.out.println(map);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//1.把Map集合中所有的key取出来存储到Set集合中</span></span><br><span class="line">        Set&lt;String&gt; set = map.keySet();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2.使用迭代器遍历Set集合，获取到每一个key</span></span><br><span class="line">        Iterator&lt;String&gt; it = set.iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext())&#123;</span><br><span class="line">            String key = it.next();</span><br><span class="line">            Integer value = map.get(key);</span><br><span class="line">            System.out.println(key+<span class="string">"="</span>+value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/05/Map%E9%9B%86%E5%90%88/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HashSet集合存储自定义元素踩坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/05/HashSet%E9%9B%86%E5%90%88%E5%AD%98%E5%82%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%83%E7%B4%A0%E8%B8%A9%E5%9D%91/">HashSet集合存储自定义类型数据时的踩坑</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/05/HashSet%E9%9B%86%E5%90%88%E5%AD%98%E5%82%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%83%E7%B4%A0%E8%B8%A9%E5%9D%91/" class="archive-article-date">
+  	<time datetime="2020-03-05T08:52:25.334Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+</a>
+        
+      </header>
+    
+<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>问题说明：由于基本数据类型的包装类重写了hashCode方法和equals方法，</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/05/HashSet%E9%9B%86%E5%90%88%E5%AD%98%E5%82%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%83%E7%B4%A0%E8%B8%A9%E5%9D%91/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HashSet为什么不能存储重复元素原因" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/05/HashSet%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%AD%98%E5%82%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%E5%8E%9F%E5%9B%A0/">HashSet为什么不能存储重复元素原因</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/05/HashSet%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%AD%98%E5%82%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%E5%8E%9F%E5%9B%A0/" class="archive-article-date">
+  	<time datetime="2020-03-05T08:40:17.862Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+</a>
+        
+      </header>
+    
+<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/05/HashSet%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%AD%98%E5%82%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%E5%8E%9F%E5%9B%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Set集合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/05/Set%E9%9B%86%E5%90%88/">List集合</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/05/Set%E9%9B%86%E5%90%88/" class="archive-article-date">
+  	<time datetime="2020-03-05T08:10:56.101Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+</a>
+        
+      </header>
+    
+<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h1><p>java.util.Set接口 extends Collection接口</p>
+<p>Set接口的特点：</p>
+<ol>
+<li>不允许存储重复元素</li>
+<li>没有索引，没有带索引的方法，也不能使用普通的for循环遍历</li>
+</ol>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaSet</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/05/Set%E9%9B%86%E5%90%88/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-LinkedList集合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/05/LinkedList%E9%9B%86%E5%90%88/">LinkedList集合（实现了List接口）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/05/LinkedList%E9%9B%86%E5%90%88/" class="archive-article-date">
+  	<time datetime="2020-03-05T07:39:38.277Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+</a>
+        
+      </header>
+    
+<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="LinkedList集合"><a href="#LinkedList集合" class="headerlink" title="LinkedList集合"></a>LinkedList集合</h1><p>java.util.LinkedList集合 implements List接口</p>
+<ol>
+<li>底层是一个链表结构：增删快，查询慢</li>
+<li>里边包含了大量操作首尾元素的方法</li>
+</ol>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/05/LinkedList%E9%9B%86%E5%90%88/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-List集合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -264,6 +670,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -298,19 +715,19 @@
 
 
   
-    <article id="post-Java_ArrayList集合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ArrayList集合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/02/Java_ArrayList%E9%9B%86%E5%90%88/">Java-ArrayList集合</a>
+      <a class="article-title" href="/2020/03/02/ArrayList%E9%9B%86%E5%90%88/">ArrayList集合（实现了List接口）</a>
     </h1>
   
 
         
-        <a href="/2020/03/02/Java_ArrayList%E9%9B%86%E5%90%88/" class="archive-article-date">
+        <a href="/2020/03/02/ArrayList%E9%9B%86%E5%90%88/" class="archive-article-date">
   	<time datetime="2020-03-02T08:19:01.094Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
 </a>
         
@@ -322,7 +739,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="ArrayList集合"><a href="#ArrayList集合" class="headerlink" title="ArrayList集合"></a>ArrayList集合</h1><p>数组的长度不可以发生改变，但是ArrayList集合的长度是可以随意变化的。</p>
-<p>但是ArrayList集合的长度是可以随意变化的。</p>
+<p>但是ArrayList集合的长度是可以随意变化的。（底层是一个数组结构，查询快，增删慢）</p>
 <p>对于ArrayList来说，有一个尖括号&lt;E&gt;代表泛型。</p>
 <p>泛型：也就是装在集合当中的所有元素，全部都是统一的什么类型。</p>
 <p>注意：泛型只能是引用类型，不能是基本类型。</p>
@@ -357,7 +774,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/02/Java_ArrayList%E9%9B%86%E5%90%88/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/03/02/ArrayList%E9%9B%86%E5%90%88/">展开全文 >></a>
         </p>
       
 
@@ -592,395 +1009,6 @@
 
 
   
-    <article id="post-idea启动tomcat乱码问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/26/idea%E5%90%AF%E5%8A%A8tomcat%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/">idea启动tomcat乱码问题</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/26/idea%E5%90%AF%E5%8A%A8tomcat%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-02-26T08:38:14.939Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-26</time>
-</a>
-        
-      </header>
-    
-<!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="idea启动tomcat中文乱码解决方法"><a href="#idea启动tomcat中文乱码解决方法" class="headerlink" title="idea启动tomcat中文乱码解决方法"></a>idea启动tomcat中文乱码解决方法</h3><p>第一次使用idea启动Tomcat的时候控制台可能出现中文乱码的问题 解决方法如下</p>
-<h4 id="1-设置项目编码为UTF-8"><a href="#1-设置项目编码为UTF-8" class="headerlink" title="1.设置项目编码为UTF-8"></a>1.设置项目编码为UTF-8</h4><p><img src="/2020/02/26/idea%E5%90%AF%E5%8A%A8tomcat%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/2019051915385558.png" alt="在这里插入图片描述"></p>
-<h4 id="2-打开idea安装目录的bin目录下"><a href="#2-打开idea安装目录的bin目录下" class="headerlink" title="2.打开idea安装目录的bin目录下"></a>2.打开idea安装目录的bin目录下</h4><p>进入bin目录找到idea.exe.vmoptions和idea64.exe.vmoptions文件 在这两个文件里面加上如下代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Dfile.encoding&#x3D;UTF-8</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/02/26/idea%E5%90%AF%E5%8A%A8tomcat%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/20190519154432533.png" alt="在这里插入图片描述"> <img src="/2020/02/26/idea%E5%90%AF%E5%8A%A8tomcat%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/20190519154449209.png" alt="在这里插入图片描述"> <img src="/2020/02/26/idea%E5%90%AF%E5%8A%A8tomcat%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/2019051915463717.png" alt="在这里插入图片描述"></p>
-<p>在idaeatomcat配置文件会出现该选择 然后重启idea 如果还是有乱码可能是idea的缓存问题 清除缓存重启就好了</p>
-<h4 id="清除缓存的方式"><a href="#清除缓存的方式" class="headerlink" title="清除缓存的方式"></a>清除缓存的方式</h4><p><img src="/2020/02/26/idea%E5%90%AF%E5%8A%A8tomcat%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/20190519155150882.png" alt="在这里插入图片描述"> <img src="/2020/02/26/idea%E5%90%AF%E5%8A%A8tomcat%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/20190519155229553.png" alt="在这里插入图片描述"> 重启之后解决了乱码问题</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/26/idea%E5%90%AF%E5%8A%A8tomcat%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaWeb" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/19/JavaWeb/">JavaWeb</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/19/JavaWeb/" class="archive-article-date">
-  	<time datetime="2020-02-19T13:27:16.795Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-        
-      </header>
-    
-<!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1、Web服务器"><a href="#1、Web服务器" class="headerlink" title="1、Web服务器"></a>1、Web服务器</h2><h3 id="1-1、技术讲解"><a href="#1-1、技术讲解" class="headerlink" title="1.1、技术讲解"></a>1.1、技术讲解</h3><p>ASP：</p>
-<ul>
-<li>微软：国内最早流行的就是ASP;</li>
-<li>在HTML中嵌入了VB的脚本，ASP + COM；</li>
-<li>在ASP开发中，基本一个页面都有几千行的业务代码，页面极其混乱</li>
-<li>维护成本高</li>
-<li>C#</li>
-<li>IIS</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaweb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/19/JavaWeb/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java面向对象_11" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_11/">Java面向对象_11.作用域</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_11/" class="archive-article-date">
-  	<time datetime="2020-02-18T03:34:33.938Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
-</a>
-        
-      </header>
-    
-<!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在Java中，我们经常看到public、protected、private这些修饰符。在Java中，这些修饰符可以用来限定访问作用域。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_11/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java面向对象_10" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_10/">Java面向对象_10.包</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_10/" class="archive-article-date">
-  	<time datetime="2020-02-18T03:31:37.078Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
-</a>
-        
-      </header>
-    
-<!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在前面的代码中，我们把类和接口命名为Person、Student、Hello等简单名字。<br>在现实中，如果小明写了一个Person类，小红也写了一个Person类，现在，小白既想用小明的Person，也想用小红的Person，怎么办？</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_10/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java面向对象_9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_9/">Java面向对象_9.静态字段和静态方法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_9/" class="archive-article-date">
-  	<time datetime="2020-02-18T03:29:49.706Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
-</a>
-        
-      </header>
-    
-<!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在一个class中定义的字段，我们称之为实例字段。实例字段的特点是，每个实例都有独立的字段，各个实例的同名字段互不影响。<br>还有一种字段，是用static修饰的字段，称为静态字段：static field。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1074,11 +1102,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">javaweb</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color5">idea</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JavaSet</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java基础_Java程序基础-3.浮点数运算 | 一只猿的技术博</title>
+  <title>List集合 | 一只猿的技术博</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浮点数运算和整数运算相比，只能进行加减乘除这些数值计算，不能做位运算和移位运算。在计算机中，浮点数虽然表示的范围大，但是，浮点数有个非常重要的特点，就是浮点数常常无法精确表示。 浮点数0.1在计算机中就无法精确表示，因为十进制的0.1换算成二进制是一个无限循环小数，很显然，无论使用float还是double，都只能存储一个0.1的近似值。但是，0.5这个浮点数又可以精确地表示。因为浮点数常常无法精">
+  <meta name="description" content="Set集合java.util.Set接口 extends Collection接口 Set接口的特点：  不允许存储重复元素 没有索引，没有带索引的方法，也不能使用普通的for循环遍历">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础_Java程序基础-3.浮点数运算">
-<meta property="og:url" content="http://yoursite.com/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-3/index.html">
+<meta property="og:title" content="List集合">
+<meta property="og:url" content="http://yoursite.com/2020/03/05/Set%E9%9B%86%E5%90%88/index.html">
 <meta property="og:site_name" content="一只猿的技术博">
-<meta property="og:description" content="浮点数运算和整数运算相比，只能进行加减乘除这些数值计算，不能做位运算和移位运算。在计算机中，浮点数虽然表示的范围大，但是，浮点数有个非常重要的特点，就是浮点数常常无法精确表示。 浮点数0.1在计算机中就无法精确表示，因为十进制的0.1换算成二进制是一个无限循环小数，很显然，无论使用float还是double，都只能存储一个0.1的近似值。但是，0.5这个浮点数又可以精确地表示。因为浮点数常常无法精">
+<meta property="og:description" content="Set集合java.util.Set接口 extends Collection接口 Set接口的特点：  不允许存储重复元素 没有索引，没有带索引的方法，也不能使用普通的for循环遍历">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-17T02:34:31.525Z">
-<meta property="article:modified_time" content="2020-02-25T00:53:36.864Z">
+<meta property="article:published_time" content="2020-03-05T08:10:56.101Z">
+<meta property="article:modified_time" content="2020-03-05T08:40:06.063Z">
 <meta property="article:author" content="Java猿的技术博">
-<meta property="article:tag" content="Java">
+<meta property="article:tag" content="JavaSet">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="一只猿的技术博" type="application/atom+xml">
@@ -151,20 +151,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java基础_Java程序基础-3" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Set集合" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java基础_Java程序基础-3.浮点数运算
+      List集合
     </h1>
   
 
         
-        <a href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-3/" class="archive-article-date">
-  	<time datetime="2020-02-17T02:34:31.525Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
+        <a href="/2020/03/05/Set%E9%9B%86%E5%90%88/" class="archive-article-date">
+  	<time datetime="2020-03-05T08:10:56.101Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
 </a>
         
       </header>
@@ -174,22 +174,29 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>浮点数运算和整数运算相比，只能进行加减乘除这些数值计算，不能做位运算和移位运算。<br>在计算机中，浮点数虽然表示的范围大，但是，浮点数有个非常重要的特点，就是浮点数常常无法精确表示。</p>
-<p>浮点数0.1在计算机中就无法精确表示，因为十进制的0.1换算成二进制是一个无限循环小数，很显然，无论使用float还是double，都只能存储一个0.1的近似值。但是，0.5这个浮点数又可以精确地表示。<br>因为浮点数常常无法精确表示，因此，浮点数运算会产生误差：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> x = <span class="number">1.0</span> / <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">double</span> y = <span class="number">1</span> - <span class="number">9.0</span> / <span class="number">10</span>;</span><br><span class="line">        <span class="comment">// 观察x和y是否相等:</span></span><br><span class="line">        System.out.println(x);</span><br><span class="line">        System.out.println(y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果：<br>0.1<br>0.09999999999999998</p>
+        <h1 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h1><p>java.util.Set接口 extends Collection接口</p>
+<p>Set接口的特点：</p>
+<ol>
+<li>不允许存储重复元素</li>
+<li>没有索引，没有带索引的方法，也不能使用普通的for循环遍历</li>
+</ol>
 <a id="more"></a>
-<h2 id="浮点数的比较"><a href="#浮点数的比较" class="headerlink" title="浮点数的比较"></a>浮点数的比较</h2><p>由于浮点数存在运算误差，所以比较两个浮点数是否相等常常会出现错误的结果。正确的比较方法是判断两个浮点数之差的绝对值是否小于一个很小的数：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 比较x和y是否相等，先计算其差的绝对值:</span></span><br><span class="line"><span class="keyword">double</span> r = Math.abs(x - y);</span><br><span class="line"><span class="comment">// 再判断绝对值是否足够小:</span></span><br><span class="line"><span class="keyword">if</span> (r &lt; <span class="number">0.00001</span>) &#123;</span><br><span class="line">    <span class="comment">// 可以认为相等</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 不相等</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>浮点数在内存的表示方法和整数比更加复杂。Java的浮点数完全遵循IEEE-754标准，这也是绝大多数计算机平台都支持的浮点数标准表示方法。</p>
-<h2 id="溢出"><a href="#溢出" class="headerlink" title="溢出"></a>溢出</h2><p>整数运算在除数为0时会报错，而浮点数运算在除数为0时，不会报错，但会返回几个特殊值：<br>NaN表示Not a Number<br>Infinity表示无穷大<br>-Infinity表示负无穷大<br>例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> d1 = <span class="number">0.0</span> / <span class="number">0</span>; <span class="comment">// NaN</span></span><br><span class="line"><span class="keyword">double</span> d2 = <span class="number">1.0</span> / <span class="number">0</span>; <span class="comment">// Infinity</span></span><br><span class="line"><span class="keyword">double</span> d3 = -<span class="number">1.0</span> / <span class="number">0</span>; <span class="comment">// -Infinity</span></span><br></pre></td></tr></table></figure>
-<p>这三种特殊值在实际运算中很少碰到，我们只需要了解即可。</p>
-<h2 id="强制转型"><a href="#强制转型" class="headerlink" title="强制转型"></a>强制转型</h2><p>可以将浮点数强制转型为整数。在转型时，浮点数的小数部分会被丢掉。如果转型后超过了整型能表示的最大范围，将返回整型的最大值。例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n1 = (<span class="keyword">int</span>) <span class="number">12.3</span>; <span class="comment">// 12</span></span><br><span class="line"><span class="keyword">int</span> n2 = (<span class="keyword">int</span>) <span class="number">12.7</span>; <span class="comment">// 12</span></span><br><span class="line"><span class="keyword">int</span> n2 = (<span class="keyword">int</span>) -<span class="number">12.7</span>; <span class="comment">// -12</span></span><br><span class="line"><span class="keyword">int</span> n3 = (<span class="keyword">int</span>) (<span class="number">12.7</span> + <span class="number">0.5</span>); <span class="comment">// 13</span></span><br><span class="line"><span class="keyword">int</span> n4 = (<span class="keyword">int</span>) <span class="number">1.2e20</span>; <span class="comment">// 2147483647</span></span><br></pre></td></tr></table></figure>
-<p>如果要进行四舍五入，可以对浮点数加上0.5再强制转型：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> d = <span class="number">2.6</span>;</span><br><span class="line">        <span class="keyword">int</span> n = (<span class="keyword">int</span>) (d + <span class="number">0.5</span>);</span><br><span class="line">        System.out.println(n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>小结<br>浮点数常常无法精确表示，并且浮点数的运算结果可能有误差；<br>比较两个浮点数通常比较它们的绝对值之差是否小于一个特定值；<br>整型和浮点型运算时，整型会自动提升为浮点型；<br>可以将浮点型强制转为整型，但超出范围后将始终返回整型的最大值。</p>
+
+<p>java.util.HashSet集合 implements Set接口</p>
+<ol>
+<li>不允许存储重复元素</li>
+<li>没有索引，没有带索引的方法，也不能使用普通的for循环遍历</li>
+<li>是一个无序集合，存储元素和取出元素的顺序有可能不一致</li>
+<li>底层是一个哈希表结构（查询的速度非常快）</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo01</span>  </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        set.add(<span class="number">1</span>);</span><br><span class="line">        set.add(<span class="number">3</span>);</span><br><span class="line">        set.add(<span class="number">2</span>);</span><br><span class="line">        set.add(<span class="number">1</span>);</span><br><span class="line">        System.out.println(set);<span class="comment">//[1, 2, 3]</span></span><br><span class="line">        <span class="comment">//使用迭代器遍历set集合</span></span><br><span class="line">        Iterator&lt;Integer&gt; it = set.iterator();</span><br><span class="line">        <span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">            <span class="keyword">int</span> se = it.next();</span><br><span class="line">            System.out.println(se);<span class="comment">//1,2,3</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//使用增强for遍历set集合</span></span><br><span class="line">        <span class="keyword">for</span>(Integer n : set)&#123;</span><br><span class="line">            System.out.println(n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="哈希值"><a href="#哈希值" class="headerlink" title="哈希值"></a>哈希值</h3><p>哈希值：是一个十进制的整数，由系统随机给出（就是对象的地址值，是一个逻辑地址，是模拟出来得到的地址，不是数据实际存储的物理地址）</p>
+<p>在object类中有一个方法，可以获取对象的哈希值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span></span><br><span class="line"><span class="function">          返回该对象的哈希码值。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">gethash</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person p1 = <span class="keyword">new</span> Person();</span><br><span class="line">        <span class="keyword">int</span> h1 = p1.hashCode();</span><br><span class="line">        System.out.println(h1);</span><br><span class="line"></span><br><span class="line">        Person p2 = <span class="keyword">new</span> Person();</span><br><span class="line">        <span class="keyword">int</span> h2 =  p2.hashCode();</span><br><span class="line">        System.out.println(h2);</span><br><span class="line">        <span class="comment">//注意：对象的地址值其实就是使用的十六进制过后的哈希值</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -234,7 +241,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaSet</a>
         		</li>
       		
 		</ul>
@@ -290,7 +297,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/05/Set%E9%9B%86%E5%90%88/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -304,18 +311,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-4/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/03/05/HashSet%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%AD%98%E5%82%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%E5%8E%9F%E5%9B%A0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java基础_Java程序基础-4.布尔运算
+          HashSet为什么不能存储重复元素原因
         
       </div>
     </a>
   
   
-    <a href="/2020/02/16/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java基础_Java程序基础-2.整数运算</div>
+    <a href="/2020/03/05/LinkedList%E9%9B%86%E5%90%88/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LinkedList集合（实现了List接口）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -342,7 +349,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#浮点数的比较"><span class="toc-number">1.</span> <span class="toc-text">浮点数的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#溢出"><span class="toc-number">2.</span> <span class="toc-text">溢出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#强制转型"><span class="toc-number">3.</span> <span class="toc-text">强制转型</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Set集合"><span class="toc-number">1.</span> <span class="toc-text">Set集合</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#哈希值"><span class="toc-number">1.0.1.</span> <span class="toc-text">哈希值</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>

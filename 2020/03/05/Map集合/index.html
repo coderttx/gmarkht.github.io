@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java基础_Java程序基础-3.浮点数运算 | 一只猿的技术博</title>
+  <title>Map集合 | 一只猿的技术博</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="浮点数运算和整数运算相比，只能进行加减乘除这些数值计算，不能做位运算和移位运算。在计算机中，浮点数虽然表示的范围大，但是，浮点数有个非常重要的特点，就是浮点数常常无法精确表示。 浮点数0.1在计算机中就无法精确表示，因为十进制的0.1换算成二进制是一个无限循环小数，很显然，无论使用float还是double，都只能存储一个0.1的近似值。但是，0.5这个浮点数又可以精确地表示。因为浮点数常常无法精">
+  <meta name="description" content="Map集合1public interface Map&lt;K,V&gt;  Map集合的特点：  Map集合是一个双列集合，一个元素包含两个值（key，value） Map集合中的元素，key与value的数据类型可以相同，也可以不同 Map集合中的元素，key是不可以重复的，value是可以重复的 Map集合中的元素，key与value是一一对应  Map接口常用的实现类HashMap基于哈希">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础_Java程序基础-3.浮点数运算">
-<meta property="og:url" content="http://yoursite.com/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-3/index.html">
+<meta property="og:title" content="Map集合">
+<meta property="og:url" content="http://yoursite.com/2020/03/05/Map%E9%9B%86%E5%90%88/index.html">
 <meta property="og:site_name" content="一只猿的技术博">
-<meta property="og:description" content="浮点数运算和整数运算相比，只能进行加减乘除这些数值计算，不能做位运算和移位运算。在计算机中，浮点数虽然表示的范围大，但是，浮点数有个非常重要的特点，就是浮点数常常无法精确表示。 浮点数0.1在计算机中就无法精确表示，因为十进制的0.1换算成二进制是一个无限循环小数，很显然，无论使用float还是double，都只能存储一个0.1的近似值。但是，0.5这个浮点数又可以精确地表示。因为浮点数常常无法精">
+<meta property="og:description" content="Map集合1public interface Map&lt;K,V&gt;  Map集合的特点：  Map集合是一个双列集合，一个元素包含两个值（key，value） Map集合中的元素，key与value的数据类型可以相同，也可以不同 Map集合中的元素，key是不可以重复的，value是可以重复的 Map集合中的元素，key与value是一一对应  Map接口常用的实现类HashMap基于哈希">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-17T02:34:31.525Z">
-<meta property="article:modified_time" content="2020-02-25T00:53:36.864Z">
+<meta property="article:published_time" content="2020-03-05T09:27:22.285Z">
+<meta property="article:modified_time" content="2020-03-05T11:12:12.305Z">
 <meta property="article:author" content="Java猿的技术博">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -151,20 +151,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java基础_Java程序基础-3" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Map集合" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java基础_Java程序基础-3.浮点数运算
+      Map集合
     </h1>
   
 
         
-        <a href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-3/" class="archive-article-date">
-  	<time datetime="2020-02-17T02:34:31.525Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
+        <a href="/2020/03/05/Map%E9%9B%86%E5%90%88/" class="archive-article-date">
+  	<time datetime="2020-03-05T09:27:22.285Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
 </a>
         
       </header>
@@ -174,22 +174,31 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>浮点数运算和整数运算相比，只能进行加减乘除这些数值计算，不能做位运算和移位运算。<br>在计算机中，浮点数虽然表示的范围大，但是，浮点数有个非常重要的特点，就是浮点数常常无法精确表示。</p>
-<p>浮点数0.1在计算机中就无法精确表示，因为十进制的0.1换算成二进制是一个无限循环小数，很显然，无论使用float还是double，都只能存储一个0.1的近似值。但是，0.5这个浮点数又可以精确地表示。<br>因为浮点数常常无法精确表示，因此，浮点数运算会产生误差：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> x = <span class="number">1.0</span> / <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">double</span> y = <span class="number">1</span> - <span class="number">9.0</span> / <span class="number">10</span>;</span><br><span class="line">        <span class="comment">// 观察x和y是否相等:</span></span><br><span class="line">        System.out.println(x);</span><br><span class="line">        System.out.println(y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果：<br>0.1<br>0.09999999999999998</p>
-<a id="more"></a>
-<h2 id="浮点数的比较"><a href="#浮点数的比较" class="headerlink" title="浮点数的比较"></a>浮点数的比较</h2><p>由于浮点数存在运算误差，所以比较两个浮点数是否相等常常会出现错误的结果。正确的比较方法是判断两个浮点数之差的绝对值是否小于一个很小的数：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 比较x和y是否相等，先计算其差的绝对值:</span></span><br><span class="line"><span class="keyword">double</span> r = Math.abs(x - y);</span><br><span class="line"><span class="comment">// 再判断绝对值是否足够小:</span></span><br><span class="line"><span class="keyword">if</span> (r &lt; <span class="number">0.00001</span>) &#123;</span><br><span class="line">    <span class="comment">// 可以认为相等</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 不相等</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>浮点数在内存的表示方法和整数比更加复杂。Java的浮点数完全遵循IEEE-754标准，这也是绝大多数计算机平台都支持的浮点数标准表示方法。</p>
-<h2 id="溢出"><a href="#溢出" class="headerlink" title="溢出"></a>溢出</h2><p>整数运算在除数为0时会报错，而浮点数运算在除数为0时，不会报错，但会返回几个特殊值：<br>NaN表示Not a Number<br>Infinity表示无穷大<br>-Infinity表示负无穷大<br>例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> d1 = <span class="number">0.0</span> / <span class="number">0</span>; <span class="comment">// NaN</span></span><br><span class="line"><span class="keyword">double</span> d2 = <span class="number">1.0</span> / <span class="number">0</span>; <span class="comment">// Infinity</span></span><br><span class="line"><span class="keyword">double</span> d3 = -<span class="number">1.0</span> / <span class="number">0</span>; <span class="comment">// -Infinity</span></span><br></pre></td></tr></table></figure>
-<p>这三种特殊值在实际运算中很少碰到，我们只需要了解即可。</p>
-<h2 id="强制转型"><a href="#强制转型" class="headerlink" title="强制转型"></a>强制转型</h2><p>可以将浮点数强制转型为整数。在转型时，浮点数的小数部分会被丢掉。如果转型后超过了整型能表示的最大范围，将返回整型的最大值。例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n1 = (<span class="keyword">int</span>) <span class="number">12.3</span>; <span class="comment">// 12</span></span><br><span class="line"><span class="keyword">int</span> n2 = (<span class="keyword">int</span>) <span class="number">12.7</span>; <span class="comment">// 12</span></span><br><span class="line"><span class="keyword">int</span> n2 = (<span class="keyword">int</span>) -<span class="number">12.7</span>; <span class="comment">// -12</span></span><br><span class="line"><span class="keyword">int</span> n3 = (<span class="keyword">int</span>) (<span class="number">12.7</span> + <span class="number">0.5</span>); <span class="comment">// 13</span></span><br><span class="line"><span class="keyword">int</span> n4 = (<span class="keyword">int</span>) <span class="number">1.2e20</span>; <span class="comment">// 2147483647</span></span><br></pre></td></tr></table></figure>
-<p>如果要进行四舍五入，可以对浮点数加上0.5再强制转型：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> d = <span class="number">2.6</span>;</span><br><span class="line">        <span class="keyword">int</span> n = (<span class="keyword">int</span>) (d + <span class="number">0.5</span>);</span><br><span class="line">        System.out.println(n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>小结<br>浮点数常常无法精确表示，并且浮点数的运算结果可能有误差；<br>比较两个浮点数通常比较它们的绝对值之差是否小于一个特定值；<br>整型和浮点型运算时，整型会自动提升为浮点型；<br>可以将浮点型强制转为整型，但超出范围后将始终返回整型的最大值。</p>
+        <h1 id="Map集合"><a href="#Map集合" class="headerlink" title="Map集合"></a>Map集合</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Map</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Map集合的特点：</p>
+<ol>
+<li>Map集合是一个双列集合，一个元素包含两个值（key，value）</li>
+<li>Map集合中的元素，key与value的数据类型可以相同，也可以不同</li>
+<li>Map集合中的元素，key是不可以重复的，value是可以重复的</li>
+<li>Map集合中的元素，key与value是一一对应</li>
+</ol>
+<h2 id="Map接口常用的实现类"><a href="#Map接口常用的实现类" class="headerlink" title="Map接口常用的实现类"></a>Map接口常用的实现类</h2><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>基于哈希表的 <code>Map</code> 接口的实现。此实现提供所有可选的映射操作，并允许使用 <code>null</code> 值和 <code>null</code>  键。（除了非同步和允许使用 null 之外，<code>HashMap</code> 类与 <code>Hashtable</code>  大致相同。）此类不保证映射的顺序，特别是它不保证该顺序恒久不变。 </p>
+<h3 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h3><p><code>Map</code> 接口的哈希表和链接列表实现，具有可预知的迭代顺序。此实现与 <code>HashMap</code>  的不同之处在于，后者维护着一个运行于所有条目的双重链接列表。此链接列表定义了迭代顺序，该迭代顺序通常就是将键插入到映射中的顺序（<em>插入顺序<em>）。注意，如果在映射中</em>重新插入</em>  键，则插入顺序不受影响。</p>
+<h2 id="Map接口中常用的方法"><a href="#Map接口中常用的方法" class="headerlink" title="Map接口中常用的方法"></a>Map接口中常用的方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">V <span class="title">put</span><span class="params">(K key, V value)</span> </span></span><br><span class="line"><span class="function">          将指定的值与此映射中的指定键关联（可选操作）。 </span></span><br><span class="line"><span class="function">V <span class="title">remove</span><span class="params">(Object key)</span> </span></span><br><span class="line"><span class="function">          如果存在一个键的映射关系，则将其从此映射中移除（可选操作）。 </span></span><br><span class="line"><span class="function">V <span class="title">get</span><span class="params">(Object key)</span> </span></span><br><span class="line"><span class="function">          返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回 <span class="keyword">null</span>。  </span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">containsKey</span><span class="params">(Object key)</span> </span></span><br><span class="line"><span class="function">          如果此映射包含指定键的映射关系，则返回 <span class="keyword">true</span>。</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Map集合遍历键查找值的方法"><a href="#Map集合遍历键查找值的方法" class="headerlink" title="Map集合遍历键查找值的方法"></a>Map集合遍历键查找值的方法</h2><p>使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Set&lt;K&gt; <span class="title">keySet</span><span class="params">()</span> </span></span><br><span class="line"><span class="function">         返回此映射中包含的键的 Set 视图。</span></span><br></pre></td></tr></table></figure>
+
+<p>步骤：</p>
+<ol>
+<li>把Map集合中所有的key取出来存储到Set集合中</li>
+<li>使用迭代器或者是增强for遍历Set集合，获取到每一个key</li>
+<li>使用get(key)通过key获取value</li>
+</ol>
+<p>代码演示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Map集合;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Map&lt;String ,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">"张三"</span>,<span class="number">18</span>);</span><br><span class="line">        map.put(<span class="string">"李四"</span>,<span class="number">19</span>);</span><br><span class="line">        map.put(<span class="string">"王五"</span>,<span class="number">20</span>);</span><br><span class="line">        System.out.println(map);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//1.把Map集合中所有的key取出来存储到Set集合中</span></span><br><span class="line">        Set&lt;String&gt; set = map.keySet();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2.使用迭代器遍历Set集合，获取到每一个key</span></span><br><span class="line">        Iterator&lt;String&gt; it = set.iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext())&#123;</span><br><span class="line">            String key = it.next();</span><br><span class="line">            Integer value = map.get(key);</span><br><span class="line">            System.out.println(key+<span class="string">"="</span>+value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -290,7 +299,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/05/Map%E9%9B%86%E5%90%88/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -304,18 +313,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-4/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java基础_Java程序基础-4.布尔运算
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/02/16/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java基础_Java程序基础-2.整数运算</div>
+    <a href="/2020/03/05/HashSet%E9%9B%86%E5%90%88%E5%AD%98%E5%82%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%83%E7%B4%A0%E8%B8%A9%E5%9D%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HashSet集合存储自定义类型数据时的踩坑</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -342,7 +342,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#浮点数的比较"><span class="toc-number">1.</span> <span class="toc-text">浮点数的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#溢出"><span class="toc-number">2.</span> <span class="toc-text">溢出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#强制转型"><span class="toc-number">3.</span> <span class="toc-text">强制转型</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Map集合"><span class="toc-number">1.</span> <span class="toc-text">Map集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Map接口常用的实现类"><span class="toc-number">1.1.</span> <span class="toc-text">Map接口常用的实现类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HashMap"><span class="toc-number">1.1.1.</span> <span class="toc-text">HashMap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LinkedHashMap"><span class="toc-number">1.1.2.</span> <span class="toc-text">LinkedHashMap</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map接口中常用的方法"><span class="toc-number">1.2.</span> <span class="toc-text">Map接口中常用的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map集合遍历键查找值的方法"><span class="toc-number">1.3.</span> <span class="toc-text">Map集合遍历键查找值的方法</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
