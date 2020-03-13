@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 一只猿的技术博</title>
+  <title>Java面向对象_10.包 | 一只猿的技术博</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="一只猿的技术博">
-<meta property="og:url" content="http://yoursite.com/archives/page/4/index.html">
+  <meta name="description" content="在前面的代码中，我们把类和接口命名为Person、Student、Hello等简单名字。在现实中，如果小明写了一个Person类，小红也写了一个Person类，现在，小白既想用小明的Person，也想用小红的Person，怎么办？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java面向对象_10.包">
+<meta property="og:url" content="http://yoursite.com/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_10_%E5%8C%85/index.html">
 <meta property="og:site_name" content="一只猿的技术博">
+<meta property="og:description" content="在前面的代码中，我们把类和接口命名为Person、Student、Hello等简单名字。在现实中，如果小明写了一个Person类，小红也写了一个Person类，现在，小白既想用小明的Person，也想用小红的Person，怎么办？">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-18T03:31:37.078Z">
+<meta property="article:modified_time" content="2020-02-18T03:34:04.057Z">
 <meta property="article:author" content="Java猿的技术博">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="一只猿的技术博" type="application/atom+xml">
@@ -146,36 +151,102 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java面向对象_10_包" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java面向对象_10.包
+    </h1>
+  
+
+        
+        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_10_%E5%8C%85/" class="archive-article-date">
+  	<time datetime="2020-02-18T03:31:37.078Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
+</a>
+        
+      </header>
     
+<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在前面的代码中，我们把类和接口命名为Person、Student、Hello等简单名字。<br>在现实中，如果小明写了一个Person类，小红也写了一个Person类，现在，小白既想用小明的Person，也想用小红的Person，怎么办？</p>
+<a id="more"></a>
+<p>如果小军写了一个Arrays类，恰好JDK也自带了一个Arrays类，如何解决类名冲突？<br>在Java中，我们使用package来解决名字冲突。<br>Java定义了一种名字空间，称之为包：package。一个类总是属于某个包，类名（比如Person）只是一个简写，真正的完整类名是包名.类名。<br>例如：<br>小明的Person类存放在包ming下面，因此，完整类名是ming.Person；<br>小红的Person类存放在包hong下面，因此，完整类名是hong.Person；<br>小军的Arrays类存放在包mr.jun下面，因此，完整类名是mr.jun.Arrays；<br>JDK的Arrays类存放在包java.util下面，因此，完整类名是java.util.Arrays。<br>在定义class的时候，我们需要在第一行声明这个class属于哪个包。<br>小明的Person.java文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">package ming; &#x2F;&#x2F; 申明包名ming</span><br><span class="line"></span><br><span class="line">public class Person &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>小军的Arrays.java文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">package mr.jun; &#x2F;&#x2F; 申明包名mr.jun</span><br><span class="line"></span><br><span class="line">public class Arrays &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在Java虚拟机执行的时候，JVM只看完整类名，因此，只要包名不同，类就不同。<br>包可以是多层结构，用.隔开。例如：java.util。<br> 要特别注意：包没有父子关系。java.util和java.util.zip是不同的包，两者没有任何继承关系。</p>
+<p>我们还需要按照包结构把上面的Java文件组织起来。假设以package_sample作为根目录，src作为源码目录，那么所有文件结构就是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">package_sample</span><br><span class="line">└─ src</span><br><span class="line">    ├─ hong</span><br><span class="line">    │  └─ Person.java</span><br><span class="line">    │  ming</span><br><span class="line">    │  └─ Person.java</span><br><span class="line">    └─ mr</span><br><span class="line">       └─ jun</span><br><span class="line">          └─ Arrays.java</span><br></pre></td></tr></table></figure>
+<p>即所有Java文件对应的目录层次要和包的层次一致。</p>
+<p>编译后的.class文件也需要按照包结构存放。如果使用IDE，把编译后的.class文件放到bin目录下，那么，编译的文件结构就是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">package_sample</span><br><span class="line">└─ bin</span><br><span class="line">   ├─ hong</span><br><span class="line">   │  └─ Person.class</span><br><span class="line">   │  ming</span><br><span class="line">   │  └─ Person.class</span><br><span class="line">   └─ mr</span><br><span class="line">      └─ jun</span><br><span class="line">         └─ Arrays.class</span><br></pre></td></tr></table></figure>
+<p>编译的命令相对比较复杂，我们需要在src目录下执行javac命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac -d ..&#x2F;bin ming&#x2F;Person.java hong&#x2F;Person.java mr&#x2F;jun&#x2F;Arrays.java</span><br></pre></td></tr></table></figure>
+<p>在IDE中，会自动根据包结构编译所有Java源码，所以不必担心使用命令行编译的复杂命令。</p>
+<p>包作用域</p>
+<p>位于同一个包的类，可以访问包作用域的字段和方法。不用public、protected、private修饰的字段和方法就是包作用域。例如，Person类定义在hello包下面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package hello;</span><br><span class="line"></span><br><span class="line">public class Person &#123;</span><br><span class="line">    &#x2F;&#x2F; 包作用域:</span><br><span class="line">    void hello() &#123;</span><br><span class="line">        System.out.println(&quot;Hello!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Main类也定义在hello包下面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package hello;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Person p &#x3D; new Person();</span><br><span class="line">        p.hello(); &#x2F;&#x2F; 可以调用，因为Main和Person在同一个包</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>import<br>在一个class中，我们总会引用其他的class。例如，小明的ming.Person类，如果要引用小军的mr.jun.Arrays类，他有三种写法：<br>第一种，直接写出完整类名，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Person.java</span><br><span class="line">package ming;</span><br><span class="line"></span><br><span class="line">public class Person &#123;</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        mr.jun.Arrays arrays &#x3D; new mr.jun.Arrays();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>很显然，每次写完整类名比较痛苦。<br>因此，第二种写法是用import语句，导入小军的Arrays，然后写简单类名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Person.java</span><br><span class="line">package ming;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 导入完整类名:</span><br><span class="line">import mr.jun.Arrays;</span><br><span class="line"></span><br><span class="line">public class Person &#123;</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        Arrays arrays &#x3D; new Arrays();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在写import的时候，可以使用*，表示把这个包下面的所有class都导入进来（但不包括子包的class）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Person.java</span><br><span class="line">package ming;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 导入mr.jun包的所有class:</span><br><span class="line">import mr.jun.*;</span><br><span class="line"></span><br><span class="line">public class Person &#123;</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        Arrays arrays &#x3D; new Arrays();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们一般不推荐这种写法，因为在导入了多个包后，很难看出Arrays类属于哪个包。<br>还有一种import static的语法，它可以导入一个类的静态字段和静态方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package main;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 导入System类的所有静态字段和静态方法:</span><br><span class="line">import static java.lang.System.*;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        &#x2F;&#x2F; 相当于调用System.out.println(…)</span><br><span class="line">        out.println(&quot;Hello, world!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>import static很少使用。</p>
+<p>Java编译器最终编译出的.class文件只使用完整类名，因此，在代码中，当编译器遇到一个class名称时：<br>如果是完整类名，就直接根据完整类名查找这个class；<br>如果是简单类名，按下面的顺序依次查找：<br>查找当前package是否存在这个class；<br>查找import的包是否包含这个class；<br>查找java.lang包是否包含这个class。<br>如果按照上面的规则还无法确定类名，则编译报错。</p>
+<p>编写class的时候，编译器会自动帮我们做两个import动作：<br>默认自动import当前package的其他class；<br>默认自动import java.lang.*。<br>自动导入的是java.lang包，但类似java.lang.reflect这些包仍需要手动导入。<br>如果有两个class名称相同，例如，mr.jun.Arrays和java.util.Arrays，那么只能import其中一个，另一个必须写完整类名。</p>
+<p>最佳实践<br>为了避免名字冲突，我们需要确定唯一的包名。推荐的做法是使用倒置的域名来确保唯一性。例如：<br>org.apache<br>org.apache.commons.log<br>com.liaoxuefeng.sample<br>子包就可以根据功能自行命名。<br>要注意不要和java.lang包的类重名，即自己的类不要使用这些名字：<br>String<br>System<br>Runtime<br>…<br>要注意也不要和JDK常用类重名：<br>java.util.List<br>java.text.Format<br>java.math.BigInteger<br>…</p>
+<p>小结</p>
+<p>Java内建的package机制是为了避免class命名冲突；<br>JDK的核心类使用java.lang包，编译器会自动导入；<br>JDK的其它常用类定义在java.util.*，java.math.*，java.text.*，……；<br>包名推荐使用倒置的域名，例如org.apache。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢老板抬手<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-3/" class="archive-article-date">
-  	<time datetime="2020-02-17T06:10:02.512Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-3/">Java基础_流程控制-3.switch多重选择</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -187,326 +258,127 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_10_%E5%8C%85/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-2/" class="archive-article-date">
-  	<time datetime="2020-02-17T06:08:41.296Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_11_%E4%BD%9C%E7%94%A8%E5%9F%9F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java面向对象_11.作用域
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_9_%E9%9D%99%E6%80%81%E5%AD%97%E6%AE%B5%E4%B8%8E%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java面向对象_9.静态字段和静态方法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-2/">Java基础_流程控制-2.if判断</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-1/" class="archive-article-date">
-  	<time datetime="2020-02-17T05:22:02.614Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-1/">Java基础_流程控制-1.输入与输出</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-6/" class="archive-article-date">
-  	<time datetime="2020-02-17T05:18:20.968Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-6/">Java基础_Java程序基础-6.数组类型</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-5/" class="archive-article-date">
-  	<time datetime="2020-02-17T03:13:49.096Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-5/">Java基础_Java程序基础-5.字符和字符串</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-4/" class="archive-article-date">
-  	<time datetime="2020-02-17T02:39:08.045Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-4/">Java基础_Java程序基础-4.布尔运算</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-3/" class="archive-article-date">
-  	<time datetime="2020-02-17T02:34:31.525Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-3/">Java基础_Java程序基础-3.浮点数运算</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/16/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-2/" class="archive-article-date">
-  	<time datetime="2020-02-16T14:32:24.877Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/16/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-2/">Java基础_Java程序基础-2.整数运算</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/16/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-1/" class="archive-article-date">
-  	<time datetime="2020-02-16T13:05:49.195Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/16/Java%E5%9F%BA%E7%A1%80_Java%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80-1/">Java基础_Java程序基础-1.基本数据类型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
   
 
 
@@ -530,8 +402,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java面向对象_7.抽象类 | 一只猿的技术博</title>
+  <title>Java面向对象_3.方法重载 | 一只猿的技术博</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简述：由于多态的存在，每个子类都可以覆写父类的方法，例如：">
+  <meta name="description" content="在一个类中，我们可以定义多个方法。如果有一系列方法，它们的功能都是类似的，只有参数有所不同，那么，可以把这一组方法名做成同名方法。例如，在Hello类中，定义多个hello()方法：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java面向对象_7.抽象类">
-<meta property="og:url" content="http://yoursite.com/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_7/index.html">
+<meta property="og:title" content="Java面向对象_3.方法重载">
+<meta property="og:url" content="http://yoursite.com/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_3_%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/index.html">
 <meta property="og:site_name" content="一只猿的技术博">
-<meta property="og:description" content="简述：由于多态的存在，每个子类都可以覆写父类的方法，例如：">
+<meta property="og:description" content="在一个类中，我们可以定义多个方法。如果有一系列方法，它们的功能都是类似的，只有参数有所不同，那么，可以把这一组方法名做成同名方法。例如，在Hello类中，定义多个hello()方法：">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-18T03:26:51.078Z">
-<meta property="article:modified_time" content="2020-02-18T03:28:15.370Z">
+<meta property="article:published_time" content="2020-02-18T03:18:35.029Z">
+<meta property="article:modified_time" content="2020-02-19T06:57:56.725Z">
 <meta property="article:author" content="Java猿的技术博">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -151,20 +151,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java面向对象_7" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java面向对象_3_方法重载" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java面向对象_7.抽象类
+      Java面向对象_3.方法重载
     </h1>
   
 
         
-        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_7/" class="archive-article-date">
-  	<time datetime="2020-02-18T03:26:51.078Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
+        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_3_%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/" class="archive-article-date">
+  	<time datetime="2020-02-18T03:18:35.029Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
 </a>
         
       </header>
@@ -174,35 +174,12 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>简述：<br>由于多态的存在，每个子类都可以覆写父类的方法，例如：</p>
+        <p>在一个类中，我们可以定义多个方法。如果有一系列方法，它们的功能都是类似的，只有参数有所不同，那么，可以把这一组方法名做成同名方法。例如，在Hello类中，定义多个hello()方法：</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">    public void run() &#123; … &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Student extends Person &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123; … &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Teacher extends Person &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123; … &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>从Person类派生的Student和Teacher都可以覆写run()方法。</p>
-<p>如果父类Person的run()方法没有实际意义，能否去掉方法的执行语句？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">    public void run(); &#x2F;&#x2F; Compile Error!</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>答案是不行，会导致编译错误，因为定义方法的时候，必须有实现方法的语句。</p>
-<p>能不能去掉父类的run()方法？<br>答案还是不行，因为去掉父类的run()方法，就失去了多态的特性。例如，runTwice()就无法编译：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public void runTwice(Person p) &#123;</span><br><span class="line">    p.run(); &#x2F;&#x2F; Person没有run()方法，会导致编译错误</span><br><span class="line">    p.run();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果父类的方法本身不需要实现任何功能，仅仅是为了定义方法签名，目的是让子类去覆写它，那么，可以把父类的方法声明为抽象方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">    public abstract void run();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>把一个方法声明为abstract，表示它是一个抽象方法，本身没有实现任何方法语句。因为这个抽象方法本身是无法执行的，所以，Person类也无法被实例化。编译器会告诉我们，无法编译Person类，因为它包含抽象方法。<br>必须把Person类本身也声明为abstract，才能正确编译它：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class Person &#123;</span><br><span class="line">    public abstract void run();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>抽象类</p>
-<p>如果一个class定义了方法，但没有具体执行代码，这个方法就是抽象方法，抽象方法用abstract修饰。<br>因为无法执行抽象方法，因此这个类也必须申明为抽象类（abstract class）。<br>使用abstract修饰的类就是抽象类。我们无法实例化一个抽象类：<br>Person p = new Person(); // 编译错误</p>
-<p>无法实例化的抽象类有什么用？<br>因为抽象类本身被设计成只能用于被继承，因此，抽象类可以强迫子类实现其定义的抽象方法，否则编译会报错。因此，抽象方法实际上相当于定义了“规范”。<br>例如，Person类定义了抽象方法run()，那么，在实现子类Student的时候，就必须覆写run()方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Person p &#x3D; new Student();      &#x2F;&#x2F;向上转型</span><br><span class="line">        p.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">abstract class Person &#123;</span><br><span class="line">    public abstract void run();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Student extends Person &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        System.out.println(&quot;Student.run&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>面向抽象编程</p>
-<p>当我们定义了抽象类Person，以及具体的Student、Teacher子类的时候，我们可以通过抽象类Person类型去引用具体的子类的实例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Person s &#x3D; new Student();</span><br><span class="line">Person t &#x3D; new Teacher();</span><br></pre></td></tr></table></figure>
-<p>这种引用抽象类的好处在于，我们对其进行方法调用，并不关心Person类型变量的具体子类型：<br>// 不关心Person变量的具体子类型:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.run();</span><br><span class="line">t.run();</span><br></pre></td></tr></table></figure>
-<p>同样的代码，如果引用的是一个新的子类，我们仍然不关心具体类型：<br>// 同样不关心新的子类是如何实现run()方法的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Person e &#x3D; new Employee();</span><br><span class="line">e.run();</span><br></pre></td></tr></table></figure>
-<p>这种尽量引用高层类型，避免引用实际子类型的方式，称之为面向抽象编程。</p>
-<p>面向抽象编程的本质就是：<br>上层代码只定义规范（例如：abstract class Person）；<br>不需要子类就可以实现业务逻辑（正常编译）；<br>具体的业务逻辑由不同的子类实现，调用者并不关心。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello, world!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello, "</span> + name + <span class="string">"!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (age &lt; <span class="number">18</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"Hi, "</span> + name + <span class="string">"!"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"Hello, "</span> + name + <span class="string">"!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种方法名相同，但各自的参数不同，称为方法重载（Overload）。<br>注意：方法重载的返回值类型通常都是相同的。<br>方法重载的目的是，功能类似的方法使用同一名字，更容易记住，因此，调用起来更简单。</p>
 <p>小结</p>
-<p>通过abstract定义的方法是抽象方法，它只有定义，没有实现。抽象方法定义了子类必须实现的接口规范；<br>定义了抽象方法的class必须被定义为抽象类，从抽象类继承的子类必须实现抽象方法；<br>如果不实现抽象方法，则该子类仍是一个抽象类；<br>面向抽象编程使得调用者只关心抽象方法的定义，不关心子类的具体实现。</p>
+<p>方法重载是指多个方法的方法名相同，但各自的参数不同；<br>重载方法应该完成类似的功能，参考String的indexOf()；<br>重载方法返回值类型应该相同。</p>
 
       
 
@@ -303,7 +280,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_7/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_3_%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -317,18 +294,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_8/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_4_%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java面向对象_8.接口
+          Java面向对象_4.构造方法
         
       </div>
     </a>
   
   
-    <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_6/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java面向对象_6.多态和final、super的使用</div>
+    <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_2_%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java面向对象_2.方法</div>
       <i class="icon-circle-right"></i>
     </a>
   

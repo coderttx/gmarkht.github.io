@@ -148,6 +148,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-java内存划分" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/29/java%E5%86%85%E5%AD%98%E5%88%92%E5%88%86/">java内存</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/29/java%E5%86%85%E5%AD%98%E5%88%92%E5%88%86/" class="archive-article-date">
+  	<time datetime="2020-02-29T12:06:14.126Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
+</a>
+        
+      </header>
+    
+<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java内存"><a href="#Java内存" class="headerlink" title="Java内存"></a>Java内存</h1><p>Java的内存需要划分成5个部分：</p>
+<p>1、栈（Stack）：存放的都是方法中的局部变量。方法的运行一定要在栈中运行。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/29/java%E5%86%85%E5%AD%98%E5%88%92%E5%88%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-idea启动tomcat乱码问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -173,13 +251,7 @@
       
         <h3 id="idea启动tomcat中文乱码解决方法"><a href="#idea启动tomcat中文乱码解决方法" class="headerlink" title="idea启动tomcat中文乱码解决方法"></a>idea启动tomcat中文乱码解决方法</h3><p>第一次使用idea启动Tomcat的时候控制台可能出现中文乱码的问题 解决方法如下</p>
 <h4 id="1-设置项目编码为UTF-8"><a href="#1-设置项目编码为UTF-8" class="headerlink" title="1.设置项目编码为UTF-8"></a>1.设置项目编码为UTF-8</h4><p><img src="/2020/02/26/idea%E5%90%AF%E5%8A%A8tomcat%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/2019051915385558.png" alt="在这里插入图片描述"></p>
-<h4 id="2-打开idea安装目录的bin目录下"><a href="#2-打开idea安装目录的bin目录下" class="headerlink" title="2.打开idea安装目录的bin目录下"></a>2.打开idea安装目录的bin目录下</h4><p>进入bin目录找到idea.exe.vmoptions和idea64.exe.vmoptions文件 在这两个文件里面加上如下代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Dfile.encoding&#x3D;UTF-8</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/02/26/idea%E5%90%AF%E5%8A%A8tomcat%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/20190519154432533.png" alt="在这里插入图片描述"> <img src="/2020/02/26/idea%E5%90%AF%E5%8A%A8tomcat%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/20190519154449209.png" alt="在这里插入图片描述"> <img src="/2020/02/26/idea%E5%90%AF%E5%8A%A8tomcat%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/2019051915463717.png" alt="在这里插入图片描述"></p>
-<p>在idaeatomcat配置文件会出现该选择 然后重启idea 如果还是有乱码可能是idea的缓存问题 清除缓存重启就好了</p>
-<h4 id="清除缓存的方式"><a href="#清除缓存的方式" class="headerlink" title="清除缓存的方式"></a>清除缓存的方式</h4><p><img src="/2020/02/26/idea%E5%90%AF%E5%8A%A8tomcat%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/20190519155150882.png" alt="在这里插入图片描述"> <img src="/2020/02/26/idea%E5%90%AF%E5%8A%A8tomcat%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/20190519155229553.png" alt="在这里插入图片描述"> 重启之后解决了乱码问题</p>
-
+        
       
 
       
@@ -317,19 +389,19 @@
 
 
   
-    <article id="post-Java面向对象_11" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java面向对象_11_作用域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_11/">Java面向对象_11.作用域</a>
+      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_11_%E4%BD%9C%E7%94%A8%E5%9F%9F/">Java面向对象_11.作用域</a>
     </h1>
   
 
         
-        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_11/" class="archive-article-date">
+        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_11_%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="archive-article-date">
   	<time datetime="2020-02-18T03:34:33.938Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
 </a>
         
@@ -364,7 +436,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_11/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_11_%E4%BD%9C%E7%94%A8%E5%9F%9F/">展开全文 >></a>
         </p>
       
 
@@ -394,19 +466,19 @@
 
 
   
-    <article id="post-Java面向对象_10" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java面向对象_10_包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_10/">Java面向对象_10.包</a>
+      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_10_%E5%8C%85/">Java面向对象_10.包</a>
     </h1>
   
 
         
-        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_10/" class="archive-article-date">
+        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_10_%E5%8C%85/" class="archive-article-date">
   	<time datetime="2020-02-18T03:31:37.078Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
 </a>
         
@@ -441,7 +513,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_10/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_10_%E5%8C%85/">展开全文 >></a>
         </p>
       
 
@@ -471,19 +543,19 @@
 
 
   
-    <article id="post-Java面向对象_9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java面向对象_9_静态字段与方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_9/">Java面向对象_9.静态字段和静态方法</a>
+      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_9_%E9%9D%99%E6%80%81%E5%AD%97%E6%AE%B5%E4%B8%8E%E6%96%B9%E6%B3%95/">Java面向对象_9.静态字段和静态方法</a>
     </h1>
   
 
         
-        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_9/" class="archive-article-date">
+        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_9_%E9%9D%99%E6%80%81%E5%AD%97%E6%AE%B5%E4%B8%8E%E6%96%B9%E6%B3%95/" class="archive-article-date">
   	<time datetime="2020-02-18T03:29:49.706Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
 </a>
         
@@ -518,7 +590,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_9/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_9_%E9%9D%99%E6%80%81%E5%AD%97%E6%AE%B5%E4%B8%8E%E6%96%B9%E6%B3%95/">展开全文 >></a>
         </p>
       
 
@@ -548,19 +620,19 @@
 
 
   
-    <article id="post-Java面向对象_8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java面向对象_8_接口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_8/">Java面向对象_8.接口</a>
+      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_8_%E6%8E%A5%E5%8F%A3/">Java面向对象_8.接口</a>
     </h1>
   
 
         
-        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_8/" class="archive-article-date">
+        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_8_%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
   	<time datetime="2020-02-18T03:28:19.018Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
 </a>
         
@@ -595,7 +667,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_8/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_8_%E6%8E%A5%E5%8F%A3/">展开全文 >></a>
         </p>
       
 
@@ -625,19 +697,19 @@
 
 
   
-    <article id="post-Java面向对象_7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java面向对象_7_抽象类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_7/">Java面向对象_7.抽象类</a>
+      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_7_%E6%8A%BD%E8%B1%A1%E7%B1%BB/">Java面向对象_7.抽象类</a>
     </h1>
   
 
         
-        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_7/" class="archive-article-date">
+        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_7_%E6%8A%BD%E8%B1%A1%E7%B1%BB/" class="archive-article-date">
   	<time datetime="2020-02-18T03:26:51.078Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
 </a>
         
@@ -672,7 +744,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_7/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_7_%E6%8A%BD%E8%B1%A1%E7%B1%BB/">展开全文 >></a>
         </p>
       
 
@@ -702,19 +774,19 @@
 
 
   
-    <article id="post-Java面向对象_6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java面向对象_6_多态,final,super" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_6/">Java面向对象_6.多态和final、super的使用</a>
+      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_6_%E5%A4%9A%E6%80%81,final,super/">Java面向对象_6.多态和final、super的使用</a>
     </h1>
   
 
         
-        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_6/" class="archive-article-date">
+        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_6_%E5%A4%9A%E6%80%81,final,super/" class="archive-article-date">
   	<time datetime="2020-02-18T03:24:27.506Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
 </a>
         
@@ -749,7 +821,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_6/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_6_%E5%A4%9A%E6%80%81,final,super/">展开全文 >></a>
         </p>
       
 
@@ -779,19 +851,19 @@
 
 
   
-    <article id="post-Java面向对象_5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java面向对象_5_继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_5/">Java面向对象_5.继承</a>
+      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_5_%E7%BB%A7%E6%89%BF/">Java面向对象_5.继承</a>
     </h1>
   
 
         
-        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_5/" class="archive-article-date">
+        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_5_%E7%BB%A7%E6%89%BF/" class="archive-article-date">
   	<time datetime="2020-02-18T03:21:50.121Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
 </a>
         
@@ -826,85 +898,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java面向对象_4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_4/">Java面向对象_4.构造方法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_4/" class="archive-article-date">
-  	<time datetime="2020-02-18T03:20:01.873Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
-</a>
-        
-      </header>
-    
-<!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>创建实例的时候，我们经常需要同时初始化这个实例的字段，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Person ming &#x3D; new Person();</span><br><span class="line">ming.setName(&quot;小明&quot;);</span><br><span class="line">ming.setAge(12);</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_4/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_5_%E7%BB%A7%E6%89%BF/">展开全文 >></a>
         </p>
       
 

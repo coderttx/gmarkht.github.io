@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java面向对象_10.包 | 一只猿的技术博</title>
+  <title>异常 | 一只猿的技术博</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在前面的代码中，我们把类和接口命名为Person、Student、Hello等简单名字。在现实中，如果小明写了一个Person类，小红也写了一个Person类，现在，小白既想用小明的Person，也想用小红的Person，怎么办？">
+  <meta name="description" content="一、异常1.1&amp;nbsp;异常概念 异常：指的是程序在执行过程中，出现的非正常的情况，最终会导致JVM的非正常停止  在Java等面向对象的编程语言中，异常本事就是一个类，产生异常就是创建异常对象并抛出了一个异常对象。Java处理异常的方式就是中断处理。  异常指的并不是语法错误，语法错了，编译不通过，不会产生字节码文件，根本不能运行。  1.2&amp;nbsp;异常体系异常机制其实是帮助我们找到程序中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java面向对象_10.包">
-<meta property="og:url" content="http://yoursite.com/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_10/index.html">
+<meta property="og:title" content="异常">
+<meta property="og:url" content="http://yoursite.com/2020/03/13/%E5%BC%82%E5%B8%B8/index.html">
 <meta property="og:site_name" content="一只猿的技术博">
-<meta property="og:description" content="在前面的代码中，我们把类和接口命名为Person、Student、Hello等简单名字。在现实中，如果小明写了一个Person类，小红也写了一个Person类，现在，小白既想用小明的Person，也想用小红的Person，怎么办？">
+<meta property="og:description" content="一、异常1.1&amp;nbsp;异常概念 异常：指的是程序在执行过程中，出现的非正常的情况，最终会导致JVM的非正常停止  在Java等面向对象的编程语言中，异常本事就是一个类，产生异常就是创建异常对象并抛出了一个异常对象。Java处理异常的方式就是中断处理。  异常指的并不是语法错误，语法错了，编译不通过，不会产生字节码文件，根本不能运行。  1.2&amp;nbsp;异常体系异常机制其实是帮助我们找到程序中">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-18T03:31:37.078Z">
-<meta property="article:modified_time" content="2020-02-18T03:34:04.057Z">
+<meta property="article:published_time" content="2020-03-13T01:03:26.595Z">
+<meta property="article:modified_time" content="2020-03-13T07:54:42.470Z">
 <meta property="article:author" content="Java猿的技术博">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -151,20 +151,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java面向对象_10" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-异常" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java面向对象_10.包
+      异常
     </h1>
   
 
         
-        <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_10/" class="archive-article-date">
-  	<time datetime="2020-02-18T03:31:37.078Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
+        <a href="/2020/03/13/%E5%BC%82%E5%B8%B8/" class="archive-article-date">
+  	<time datetime="2020-03-13T01:03:26.595Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
 </a>
         
       </header>
@@ -174,40 +174,81 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在前面的代码中，我们把类和接口命名为Person、Student、Hello等简单名字。<br>在现实中，如果小明写了一个Person类，小红也写了一个Person类，现在，小白既想用小明的Person，也想用小红的Person，怎么办？</p>
-<a id="more"></a>
-<p>如果小军写了一个Arrays类，恰好JDK也自带了一个Arrays类，如何解决类名冲突？<br>在Java中，我们使用package来解决名字冲突。<br>Java定义了一种名字空间，称之为包：package。一个类总是属于某个包，类名（比如Person）只是一个简写，真正的完整类名是包名.类名。<br>例如：<br>小明的Person类存放在包ming下面，因此，完整类名是ming.Person；<br>小红的Person类存放在包hong下面，因此，完整类名是hong.Person；<br>小军的Arrays类存放在包mr.jun下面，因此，完整类名是mr.jun.Arrays；<br>JDK的Arrays类存放在包java.util下面，因此，完整类名是java.util.Arrays。<br>在定义class的时候，我们需要在第一行声明这个class属于哪个包。<br>小明的Person.java文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">package ming; &#x2F;&#x2F; 申明包名ming</span><br><span class="line"></span><br><span class="line">public class Person &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>小军的Arrays.java文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">package mr.jun; &#x2F;&#x2F; 申明包名mr.jun</span><br><span class="line"></span><br><span class="line">public class Arrays &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在Java虚拟机执行的时候，JVM只看完整类名，因此，只要包名不同，类就不同。<br>包可以是多层结构，用.隔开。例如：java.util。<br> 要特别注意：包没有父子关系。java.util和java.util.zip是不同的包，两者没有任何继承关系。</p>
-<p>我们还需要按照包结构把上面的Java文件组织起来。假设以package_sample作为根目录，src作为源码目录，那么所有文件结构就是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">package_sample</span><br><span class="line">└─ src</span><br><span class="line">    ├─ hong</span><br><span class="line">    │  └─ Person.java</span><br><span class="line">    │  ming</span><br><span class="line">    │  └─ Person.java</span><br><span class="line">    └─ mr</span><br><span class="line">       └─ jun</span><br><span class="line">          └─ Arrays.java</span><br></pre></td></tr></table></figure>
-<p>即所有Java文件对应的目录层次要和包的层次一致。</p>
-<p>编译后的.class文件也需要按照包结构存放。如果使用IDE，把编译后的.class文件放到bin目录下，那么，编译的文件结构就是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">package_sample</span><br><span class="line">└─ bin</span><br><span class="line">   ├─ hong</span><br><span class="line">   │  └─ Person.class</span><br><span class="line">   │  ming</span><br><span class="line">   │  └─ Person.class</span><br><span class="line">   └─ mr</span><br><span class="line">      └─ jun</span><br><span class="line">         └─ Arrays.class</span><br></pre></td></tr></table></figure>
-<p>编译的命令相对比较复杂，我们需要在src目录下执行javac命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac -d ..&#x2F;bin ming&#x2F;Person.java hong&#x2F;Person.java mr&#x2F;jun&#x2F;Arrays.java</span><br></pre></td></tr></table></figure>
-<p>在IDE中，会自动根据包结构编译所有Java源码，所以不必担心使用命令行编译的复杂命令。</p>
-<p>包作用域</p>
-<p>位于同一个包的类，可以访问包作用域的字段和方法。不用public、protected、private修饰的字段和方法就是包作用域。例如，Person类定义在hello包下面：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package hello;</span><br><span class="line"></span><br><span class="line">public class Person &#123;</span><br><span class="line">    &#x2F;&#x2F; 包作用域:</span><br><span class="line">    void hello() &#123;</span><br><span class="line">        System.out.println(&quot;Hello!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Main类也定义在hello包下面：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package hello;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Person p &#x3D; new Person();</span><br><span class="line">        p.hello(); &#x2F;&#x2F; 可以调用，因为Main和Person在同一个包</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>import<br>在一个class中，我们总会引用其他的class。例如，小明的ming.Person类，如果要引用小军的mr.jun.Arrays类，他有三种写法：<br>第一种，直接写出完整类名，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Person.java</span><br><span class="line">package ming;</span><br><span class="line"></span><br><span class="line">public class Person &#123;</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        mr.jun.Arrays arrays &#x3D; new mr.jun.Arrays();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>很显然，每次写完整类名比较痛苦。<br>因此，第二种写法是用import语句，导入小军的Arrays，然后写简单类名：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Person.java</span><br><span class="line">package ming;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 导入完整类名:</span><br><span class="line">import mr.jun.Arrays;</span><br><span class="line"></span><br><span class="line">public class Person &#123;</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        Arrays arrays &#x3D; new Arrays();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在写import的时候，可以使用*，表示把这个包下面的所有class都导入进来（但不包括子包的class）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Person.java</span><br><span class="line">package ming;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 导入mr.jun包的所有class:</span><br><span class="line">import mr.jun.*;</span><br><span class="line"></span><br><span class="line">public class Person &#123;</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        Arrays arrays &#x3D; new Arrays();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们一般不推荐这种写法，因为在导入了多个包后，很难看出Arrays类属于哪个包。<br>还有一种import static的语法，它可以导入一个类的静态字段和静态方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package main;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 导入System类的所有静态字段和静态方法:</span><br><span class="line">import static java.lang.System.*;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        &#x2F;&#x2F; 相当于调用System.out.println(…)</span><br><span class="line">        out.println(&quot;Hello, world!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>import static很少使用。</p>
-<p>Java编译器最终编译出的.class文件只使用完整类名，因此，在代码中，当编译器遇到一个class名称时：<br>如果是完整类名，就直接根据完整类名查找这个class；<br>如果是简单类名，按下面的顺序依次查找：<br>查找当前package是否存在这个class；<br>查找import的包是否包含这个class；<br>查找java.lang包是否包含这个class。<br>如果按照上面的规则还无法确定类名，则编译报错。</p>
-<p>编写class的时候，编译器会自动帮我们做两个import动作：<br>默认自动import当前package的其他class；<br>默认自动import java.lang.*。<br>自动导入的是java.lang包，但类似java.lang.reflect这些包仍需要手动导入。<br>如果有两个class名称相同，例如，mr.jun.Arrays和java.util.Arrays，那么只能import其中一个，另一个必须写完整类名。</p>
-<p>最佳实践<br>为了避免名字冲突，我们需要确定唯一的包名。推荐的做法是使用倒置的域名来确保唯一性。例如：<br>org.apache<br>org.apache.commons.log<br>com.liaoxuefeng.sample<br>子包就可以根据功能自行命名。<br>要注意不要和java.lang包的类重名，即自己的类不要使用这些名字：<br>String<br>System<br>Runtime<br>…<br>要注意也不要和JDK常用类重名：<br>java.util.List<br>java.text.Format<br>java.math.BigInteger<br>…</p>
-<p>小结</p>
-<p>Java内建的package机制是为了避免class命名冲突；<br>JDK的核心类使用java.lang包，编译器会自动导入；<br>JDK的其它常用类定义在java.util.*，java.math.*，java.text.*，……；<br>包名推荐使用倒置的域名，例如org.apache。</p>
+        <h1 id="一、异常"><a href="#一、异常" class="headerlink" title="一、异常"></a>一、异常</h1><h2 id="1-1-nbsp-异常概念"><a href="#1-1-nbsp-异常概念" class="headerlink" title="1.1&nbsp;异常概念"></a>1.1&nbsp;异常概念</h2><ul>
+<li>异常：指的是程序在执行过程中，出现的非正常的情况，最终会导致JVM的非正常停止</li>
+</ul>
+<p>在Java等面向对象的编程语言中，异常本事就是一个类，产生异常就是创建异常对象并抛出了一个异常对象。Java处理异常的方式就是中断处理。</p>
+<blockquote>
+<p>异常指的并不是语法错误，语法错了，编译不通过，不会产生字节码文件，根本不能运行。</p>
+</blockquote>
+<h2 id="1-2-nbsp-异常体系"><a href="#1-2-nbsp-异常体系" class="headerlink" title="1.2&nbsp;异常体系"></a>1.2&nbsp;异常体系</h2><p>异常机制其实是帮助我们找到程序中的问题，异常的根类是<code>java.lang.Throwable</code>，其下有两个子类：</p>
+<p><code>java.lang.Error</code>与<code>java.lang.Exception</code>，平常所说的异常值<code>java.lang.Exception</code>。</p>
+<h2 id="1-3-nbsp-异常分类"><a href="#1-3-nbsp-异常分类" class="headerlink" title="1.3&nbsp;异常分类"></a>1.3&nbsp;异常分类</h2><p>我们平常说的异常就是指Exception，因为这类异常一旦出现，我们就要对代码进行更正，修复程序。</p>
+<p>异常(Exception)的分类：根据在编译时期还是运行时期去检查异常</p>
+<ul>
+<li>编译时期异常：checked异常。在编译时期，就会检查，如果没有处理异常，则编译失败。（如日期格式异常）</li>
+<li>运行时期异常：runtime异常。在运行时期，检查异常。在编译时期，运行异常不会被编译器检测（不报错）。（如数学异常）</li>
+</ul>
+<p>Exception：编译期异常，进行编译（写代码）java程序出现的问题</p>
+<p>　　RuntimeException：运行期异常，java程序运行过程中出现的问题</p>
+<p>Error：错误</p>
+<p>　　错误就相当于程序就得了一个无法治愈的毛病，必须修改源代码，程序才能继续执行</p>
+<h1 id="二、异常的处理"><a href="#二、异常的处理" class="headerlink" title="二、异常的处理"></a>二、异常的处理</h1><h2 id="2-1-nbsp-throw关键字（抛出异常）"><a href="#2-1-nbsp-throw关键字（抛出异常）" class="headerlink" title="2.1&nbsp;throw关键字（抛出异常）"></a>2.1&nbsp;throw关键字（抛出异常）</h2><p>作用：可以使用throw关键字在指定的方法中抛出指定的异常</p>
+<p>使用格式：throw new xxxException(“产生异常的原因”);</p>
+<p>注意：</p>
+<ol>
+<li>throw关键字必须写在方法的内容</li>
+<li>throw关键字后边new的对象必须是Exception或者Exception的子类对象</li>
+<li>throw关键字抛出指定的异常对象，我们就必须处理这个异常对象<ol>
+<li>throw关键字后边创建的是RuntimeException或者RuntimeException的子类对象，我们可以不处理，默认交给JVM处理（打印异常对象，中断程序）</li>
+<li>throw关键字后边创建的是编译异常（写代码的时候报错），我们就必须处理这个异常，要么throws,要么try…catch</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThrowDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//int[] arr = null;</span></span><br><span class="line">        <span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">        getElement(arr,<span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getElement</span><span class="params">(<span class="keyword">int</span>[] arr , <span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">        <span class="comment">//校验数组是否为空</span></span><br><span class="line">        <span class="keyword">if</span>(arr == <span class="keyword">null</span> )&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"传递的数组的值是null"</span>);<span class="comment">//空指针是运行期异常，默认交给JVM处理</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//校验传递过来的index是否合法</span></span><br><span class="line">        <span class="keyword">if</span>(index &lt; <span class="number">0</span> || index &gt; arr.length-<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ArrayIndexOutOfBoundsException(<span class="string">"数组索引越界了"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ele  =  arr[index];</span><br><span class="line">        <span class="keyword">return</span> ele;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-nbsp-Objects非空判断"><a href="#2-2-nbsp-Objects非空判断" class="headerlink" title="2.2&nbsp;Objects非空判断"></a>2.2&nbsp;Objects非空判断</h2><p>Objects类，它由一些静态的实用方法组成，这些方法是null-save(空指针安全的)或null-tolerant（容忍空指针的），那么在它的源码中，对对象为null的值进行了抛出异常操作。</p>
+<p><code>public static &lt;T&gt; T requireNonNull(T obj):查看指定引用对象不是null.</code></p>
+<p>查看源码发现这里对为null的进行了抛出异常操作：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ObjectsDemo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        method(<span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(Object obj)</span></span>&#123;</span><br><span class="line">        <span class="comment">//对传递过来的参数进行合法性判断，判断是否为null</span></span><br><span class="line"><span class="comment">//        if(obj == null)&#123;</span></span><br><span class="line"><span class="comment">//            throw new NullPointerException("传递的对象的值是null");</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">        Objects.requireNonNull(obj,<span class="string">"传递的对象的值是null"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-nbsp-声明异常throws"><a href="#2-3-nbsp-声明异常throws" class="headerlink" title="2.3&nbsp;声明异常throws"></a>2.3&nbsp;声明异常throws</h2><p><strong>声明异常</strong>：将问题标识出来，报告给调用者。如果方法内通过throw抛出了编译时异常，而没有捕获处理（稍后将该方式），那么必须通过throws进行声明，让调用者去处理。</p>
+<p>关键字<strong>throws</strong>运用于方法声明之上，用于表示当前方法不处理异常，而是提醒该方法的调用者来处理异常（抛出异常）.</p>
+<p>声明异常格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 方法名(参数) <span class="keyword">throws</span> 异常类名<span class="number">1</span>，异常类名<span class="number">2</span>...&#123;...&#125;</span><br></pre></td></tr></table></figure>
+
+<p>声明异常的代码演示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">      throws关键字:异常处理的第一种方式，交给别人处理</span></span><br><span class="line"><span class="comment">      作用：</span></span><br><span class="line"><span class="comment">           当方法内容抛出异常对象的时候，我们就必须处理这个异常对象</span></span><br><span class="line"><span class="comment">           可以使用throws关键字处理异常对象，会把异常对象声明抛出给方法的调用者处理（自己不处理，给别人处理），最终交给JVM处理--&gt;中断处理</span></span><br><span class="line"><span class="comment">      使用格式：在方法声明时使用</span></span><br><span class="line"><span class="comment">            修饰符 返回值类型 方法名(参数列表) throws AAAException,BBBException...&#123;</span></span><br><span class="line"><span class="comment">            throw new AAAException("产生原因");</span></span><br><span class="line"><span class="comment">            throw new BBBException("产生原因");</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">      注意：</span></span><br><span class="line"><span class="comment">       1.throws关键字必须写在方法声明处</span></span><br><span class="line"><span class="comment">       2.throws关键字后边声明的异常必须是Exception或者是Exception的子类</span></span><br><span class="line"><span class="comment">       3.方法内部如果抛出了多个异常对象，那么throws后边必须也声明多个异常</span></span><br><span class="line"><span class="comment">            如果抛出的异常对象有子父类关系，那么直接声明父类异常即可</span></span><br><span class="line"><span class="comment">       4.调用了一个声明抛出异常的方法，交给方法的调用者处理，最终交给JVM要么try...catch自己处理异常</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThrowsDemo01</span>  </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FileNotFoundException </span>&#123;</span><br><span class="line">        readfile(<span class="string">"c:\\a.txt"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//对传递的文件路径进行合法性的判断</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">readfile</span><span class="params">(String filename)</span> <span class="keyword">throws</span> FileNotFoundException</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!filename.equals(<span class="string">"c:\\a.txt"</span>))&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> FileNotFoundException(<span class="string">"传递的文件路径不是c:\\a.txt"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4-nbsp-捕获异常"><a href="#2-4-nbsp-捕获异常" class="headerlink" title="2.4&nbsp;捕获异常"></a>2.4&nbsp;捕获异常</h2><p>如果异常出现的话，会立刻终止程序，所有我们得处理异常：</p>
+<ol>
+<li>该方法不处理，而是声明抛出，由该方法的调用者来处理（throws）。</li>
+<li>在方法中使用try-catch的语句块来处理异常。</li>
+</ol>
+<p><strong>try-catch</strong>的方式就是捕获异常。</p>
+<ul>
+<li><strong>捕获异常</strong>：Java中对异常有针对性的语句进行捕获，可以对出现的异常进行制定方式的处理。</li>
+</ul>
+<p>捕获异常语法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">       try..catch：处理异常的第二种方式，自己处理异常</span></span><br><span class="line"><span class="comment">       格式：</span></span><br><span class="line"><span class="comment">            try&#123;</span></span><br><span class="line"><span class="comment">               可能产生异常的代码</span></span><br><span class="line"><span class="comment">            &#125;catch(定义一个异常的变量，用来接收try中抛出的异常对象)&#123;</span></span><br><span class="line"><span class="comment">                异常的处理逻辑，产生异常对象之后，怎么处理异常对象</span></span><br><span class="line"><span class="comment">                一般在工作中，会把异常的信息记录到一个日志中</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">            ...</span></span><br><span class="line"><span class="comment">            catch()&#123;</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">       注意：</span></span><br><span class="line"><span class="comment">            1.try中可能会抛出多个异常对象，那么就可以使用多个catch来处理这些异常对象</span></span><br><span class="line"><span class="comment">            2.如果try中产生了异常，那么就会执行catch中的异常处理逻辑，执行完毕后，继续执行try...catch后面的代码</span></span><br><span class="line"><span class="comment">              如果try中没有产生异常，那么久不会catch中异常的逻辑，执行完毕后，继续执行try...catch后面的代码</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TrycatchDemo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            readfile(<span class="string">"a:\\a.tx"</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (IOException e)&#123; <span class="comment">//try中抛出什么异常对象，catch就定义什么异常变量，用来接收这个异常对象</span></span><br><span class="line">            System.out.println(<span class="string">"catch - 传递的文件后缀名不是.txt"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"后续代码"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">readfile</span><span class="params">(String filename)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!filename.endsWith(<span class="string">".txt"</span>))&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> FileNotFoundException(<span class="string">"文件的后缀名不对"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>finally代码块</strong></p>
+<ol>
+<li>finally不能单独使用，必须和try一起使用</li>
+<li>finally一般用于资源释放（资源回放），无论程序是否出现异常，最后都要释放资源（IO）</li>
+</ol>
+<h1 id="三、自定义异常"><a href="#三、自定义异常" class="headerlink" title="三、自定义异常"></a>三、自定义异常</h1><h2 id="3-1-nbsp-概述"><a href="#3-1-nbsp-概述" class="headerlink" title="3.1 &nbsp;概述"></a>3.1 &nbsp;概述</h2><p>我们说了Java中不同的异常类，分别表示着某一种具体的异常情况，那么在开发中总是有些异常情况是sun没有定义的，这个时候我们就可以自己来自定义异常。</p>
+<p>在上述代码中，发现这些异常都是JDK内部定义好的，但是实际开发中也会出现很多异常，这些异常和可能在JDK中没有定义过，例如年龄负数问题，考试成绩负数问题。</p>
+<p><strong>什么是自定义异常类</strong>：</p>
+<p>在开发中根据自己业务的异常情况来定义的异常类.</p>
+<p>例如：RegisterException。一个注册异常类。</p>
+<p><strong>异常类如何定义</strong></p>
+<ol>
+<li>自定义一个编译期异常：自定义类 并继承于 <code>java.lang.Exception</code>。</li>
+<li>自定义一个运行时期的异常类：自定义类 并继承与 <code>java.lang.RuntimeException</code>。</li>
+</ol>
+<h2 id="3-2-nbsp-代码演示"><a href="#3-2-nbsp-代码演示" class="headerlink" title="3.2&nbsp;代码演示"></a>3.2&nbsp;代码演示</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    自定义异常类：</span></span><br><span class="line"><span class="comment">        java提供的异常类，不够我们使用，需要自己定义一些异常类</span></span><br><span class="line"><span class="comment">    格式：</span></span><br><span class="line"><span class="comment">        public class XXXException extends Exception | RuntimeException&#123;</span></span><br><span class="line"><span class="comment">            添加一个空参数的构造方法</span></span><br><span class="line"><span class="comment">            添加一个带异常信息的构造方法</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">    注意：</span></span><br><span class="line"><span class="comment">        1.自定义异常类一般都是以Exception结尾，说明该类是一个异常类</span></span><br><span class="line"><span class="comment">        2.自定义异常类，必须继承Exception或者RuntimeException</span></span><br><span class="line"><span class="comment">            继承Exception：那么自定义的异常类就是一个编译期异常，如果方法内部抛出了编译期异常，就必须处理这个异常，那么throws，要么try..catch</span></span><br><span class="line"><span class="comment">            继承RuntimeException：那么自定义的异常就是一个运行期异常，无需处理，交给JVM处理（中断处理）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RegisterException</span> <span class="keyword">extends</span> <span class="title">RuntimeException</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RegisterException</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        添加一个带异常信息的构造方法</span></span><br><span class="line"><span class="comment">        查看API中的其他异常类的源码发现所有的异常类都会有一个带异常信息的构造方法，方法内部会调用父类带异常信息的处理方法，让父类来处理这个异常信息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RegisterException</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -308,7 +349,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_10/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/13/%E5%BC%82%E5%B8%B8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -322,18 +363,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_11/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/03/13/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java面向对象_11.作用域
+          多线程
         
       </div>
     </a>
   
   
-    <a href="/2020/02/18/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_9/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java面向对象_9.静态字段和静态方法</div>
+    <a href="/2020/03/05/Map%E9%9B%86%E5%90%88/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Map集合</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -360,7 +401,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、异常"><span class="toc-number">1.</span> <span class="toc-text">一、异常</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-nbsp-异常概念"><span class="toc-number">1.1.</span> <span class="toc-text">1.1&amp;nbsp;异常概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-nbsp-异常体系"><span class="toc-number">1.2.</span> <span class="toc-text">1.2&amp;nbsp;异常体系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-nbsp-异常分类"><span class="toc-number">1.3.</span> <span class="toc-text">1.3&amp;nbsp;异常分类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、异常的处理"><span class="toc-number">2.</span> <span class="toc-text">二、异常的处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-nbsp-throw关键字（抛出异常）"><span class="toc-number">2.1.</span> <span class="toc-text">2.1&amp;nbsp;throw关键字（抛出异常）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-nbsp-Objects非空判断"><span class="toc-number">2.2.</span> <span class="toc-text">2.2&amp;nbsp;Objects非空判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-nbsp-声明异常throws"><span class="toc-number">2.3.</span> <span class="toc-text">2.3&amp;nbsp;声明异常throws</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-nbsp-捕获异常"><span class="toc-number">2.4.</span> <span class="toc-text">2.4&amp;nbsp;捕获异常</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、自定义异常"><span class="toc-number">3.</span> <span class="toc-text">三、自定义异常</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-nbsp-概述"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 &amp;nbsp;概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-nbsp-代码演示"><span class="toc-number">3.2.</span> <span class="toc-text">3.2&amp;nbsp;代码演示</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
