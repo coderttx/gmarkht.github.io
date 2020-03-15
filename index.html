@@ -171,7 +171,8 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、IO概述"><a href="#一、IO概述" class="headerlink" title="一、IO概述"></a>一、IO概述</h1><h2 id="1-1-nbsp-什么是IO"><a href="#1-1-nbsp-什么是IO" class="headerlink" title="1.1&nbsp;什么是IO"></a>1.1&nbsp;什么是IO</h2><p>我们把数据的传输，可以看作是一种数据的流动</p>
+        <h1 id="一、IO概述"><a href="#一、IO概述" class="headerlink" title="一、IO概述"></a>一、IO概述</h1><h2 id="1-1-nbsp-什么是IO"><a href="#1-1-nbsp-什么是IO" class="headerlink" title="1.1&nbsp;什么是IO"></a>1.1&nbsp;什么是IO</h2><p>我们把数据的传输，可以看作是一种数据的流动，按照流动的方向，以内存为基准，分为<code>输入input</code>和<code>输出output</code>，即流向内存是输入流，流出内存是输出流。</p>
+<p>Java中I/O操作主要是指使用<code>Java.io</code>包下的内容，进行输入，输出操作。输入也叫作</p>
         
       
 
@@ -238,7 +239,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="一、多线程"><a href="#一、多线程" class="headerlink" title="一、多线程"></a>一、多线程</h1><p>我们在这之前，学习的程序在没有跳转语句的前提下，都是自上而下依次执行的；那么现在要设计一个程序，边打游戏边听歌，怎么设计？</p>
-<p>要解决上述的问题</p>
+<p>要解决上述的问题，就要使用多线程或者多进程来解决。</p>
+<h2 id="1-1-nbsp-并发与并行"><a href="#1-1-nbsp-并发与并行" class="headerlink" title="1.1&nbsp;并发与并行"></a>1.1&nbsp;并发与并行</h2><ul>
+<li><p>并发：指两个或多</p></li></ul>
         
       
 
@@ -319,6 +322,10 @@
 <li>异常：指的是程序在执行过程中，出现的非正常的情况，最终会导致JVM的非正常停止</li>
 </ul>
 <p>在Java等面向对象的编程语言中，异常本事就是一个类，产生异常就是创建异常对象并抛出了一个异常对象。Java处理异常的方式就是中断处理。</p>
+<blockquote>
+<p>异常指的并不是语法错误，语法错了，编译不通过，不会产生字节码文件，根本不能运行。</p>
+</blockquote>
+<h2 id="1-2-nbsp-异常体系"><a href="#1-2-nbsp-异常体系" class="headerlink" title="1.2&nbsp;异常体系"></a>1.2&nbsp;异常体系</h2><p>异常机制其实是</p>
         
       
 
@@ -396,6 +403,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Map集合"><a href="#Map集合" class="headerlink" title="Map集合"></a>Map集合</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Map</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>Map集合的特点：</p>
+<ol>
+<li>Map集合是一个双列集合，一个元素包含两个值（key，value）</li>
+<li>Map集合中的元素，key与value的数据类型可以相同，也可以不同</li>
+<li>Map集合</li></ol>
         
       
 
