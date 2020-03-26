@@ -148,6 +148,173 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java字符串的常量池" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/02/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E9%87%8F%E6%B1%A0/">Java字符串的常量池</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/02/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E9%87%8F%E6%B1%A0/" class="archive-article-date">
+  	<time datetime="2020-03-02T11:55:52.171Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
+</a>
+        
+      </header>
+    
+<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>解释如下：</p>
+<p><img src="/2020/03/02/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E9%87%8F%E6%B1%A0/image-20200302195618151.png" alt="image-20200302195618151"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/02/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E9%87%8F%E6%B1%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ArrayList集合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/02/ArrayList%E9%9B%86%E5%90%88/">ArrayList集合（实现了List接口）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/02/ArrayList%E9%9B%86%E5%90%88/" class="archive-article-date">
+  	<time datetime="2020-03-02T08:19:01.094Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
+</a>
+        
+      </header>
+    
+<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ArrayList集合"><a href="#ArrayList集合" class="headerlink" title="ArrayList集合"></a>ArrayList集合</h1><p>数组的长度不可以发生改变，但是ArrayList集合的长度是可以随意变化的。</p>
+<p>但是ArrayList集合的长度是可以随意变化的。（底层是一个数组结构，查询快，增删慢）</p>
+<p>对于ArrayList来说，有一个尖括号&lt;E&gt;代表泛型。</p>
+<p>泛型：也就是装在集合当中的所有元素，全部都是统一的什么类型。</p>
+<p>注意：泛型只能是引用类型，不能是基本类型。</p>
+<p>注意事项：</p>
+<ul>
+<li><p>对于ArrayLIst集合来说，直接打印得到的不是地址值，而是内容。</p>
+<p>如果内容是空，得到的是空的中括号：[]</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo2</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        ArrayList&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        System.out.println(list);</span><br><span class="line">        </span><br><span class="line">        list.add(<span class="string">"张三"</span>)</span><br><span class="line">        System.out.println(list);</span><br><span class="line">        </span><br><span class="line">        list.add(<span class="string">"李四"</span>);</span><br><span class="line">        list.add(<span class="string">"王五"</span>);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/02/ArrayList%E9%9B%86%E5%90%88/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-java中常用API" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -774,160 +941,6 @@
 
 
   
-    <article id="post-Java基础_流程控制-6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-6/">Java基础_流程控制-6.break和continue</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-6/" class="archive-article-date">
-  	<time datetime="2020-02-17T06:14:34.758Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        
-      </header>
-    
-<!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>无论是while循环还是for循环，有两个特别的语句可以使用，就是break语句和continue语句。<br>break<br>在循环过程中，可以使用break语句跳出当前循环。我们来看一个例子：</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java基础_流程控制-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-5/">Java基础_流程控制-5.for循环</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-5/" class="archive-article-date">
-  	<time datetime="2020-02-17T06:12:37.739Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        
-      </header>
-    
-<!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>除了while和do while循环，Java使用最广泛的是for循环。<br>for循环的功能非常强大，它使用计数器实现循环。for循环会先初始化计数器，然后，在每次循环前检测循环条件，在每次循环后更新计数器。计数器变量通常命名为i。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/17/Java%E5%9F%BA%E7%A1%80_%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
@@ -1017,11 +1030,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color3">Javaweb</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Javaweb</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
