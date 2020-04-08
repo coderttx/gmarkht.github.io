@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/04/01/Spring/</loc>
+    
+    <lastmod>2020-04-07T14:53:18.787Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/04/06/Spring%E4%B8%8EMybatis%E6%95%B4%E5%90%88/</loc>
+    
+    <lastmod>2020-04-06T10:17:50.852Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/03/26/Mybatis/</loc>
     
-    <lastmod>2020-03-27T10:15:15.150Z</lastmod>
+    <lastmod>2020-04-06T09:59:42.071Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/22/%E5%8F%8D%E5%B0%84/</loc>
+    
+    <lastmod>2020-04-05T08:56:10.528Z</lastmod>
     
   </url>
   
@@ -33,13 +54,6 @@
     <loc>http://yoursite.com/2020/03/13/%E5%BC%82%E5%B8%B8/</loc>
     
     <lastmod>2020-03-26T12:34:35.709Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/22/%E5%8F%8D%E5%B0%84/</loc>
-    
-    <lastmod>2020-03-26T12:34:25.315Z</lastmod>
     
   </url>
   
